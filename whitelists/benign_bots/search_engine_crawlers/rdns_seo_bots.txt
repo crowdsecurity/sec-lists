@@ -1,4 +1,5 @@
 .googlebot.com.
+.google.com.
 .yandex.ru.
 .yandex.net.
 .yandex.com.
