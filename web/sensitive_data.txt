@@ -12,6 +12,7 @@
 .config
 .cvs
 .cvsignore
+.env
 .forward
 .git/HEAD
 .git
