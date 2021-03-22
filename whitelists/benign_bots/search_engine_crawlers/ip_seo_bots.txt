@@ -1,4 +1,4 @@
-# duckduckBot
+#crawler:seo:duckduckbot (https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/)
 23.21.227.69/32
 40.88.21.235/32
 50.16.241.113/32
@@ -11,5 +11,5 @@
 54.208.100.253/32
 54.208.102.37/32
 107.21.1.8/32
-#pinterest: https://help.pinterest.com/en/business/article/pinterest-crawler
+#crawler:media:pinterest  https://help.pinterest.com/en/business/article/pinterest-crawler
 54.236.1.0/24
