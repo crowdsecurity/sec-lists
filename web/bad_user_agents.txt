@@ -42,7 +42,6 @@ Anarchie
 Ankit
 Anthill
 Apexoo
-archive.org_bot
 arquivo.pt
 arquivo-web-crawler
 Aspiegel
