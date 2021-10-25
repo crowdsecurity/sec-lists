@@ -580,6 +580,7 @@ Whacker
 Whatweb
 Who.is\ Bot
 Widow
+Windows NT 5.0
 WinHTTrack
 WiseGuys\ Robot
 WISENutbot
