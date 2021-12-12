@@ -1,0 +1,7 @@
+${jndi:
+${${::-j}${::-n}${::-d}${::-i}:
+${${::-j}ndi
+${${lower:jndi}:
+${${lower:${lower:jndi}}:
+${${lower:j}${lower:n}${lower:d}i:
+${${lower:j}${upper:n}${lower:d}${upper:i}:
