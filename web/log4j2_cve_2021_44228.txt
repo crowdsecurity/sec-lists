@@ -5,3 +5,12 @@ ${${lower:jndi}:
 ${${lower:${lower:jndi}}:
 ${${lower:j}${lower:n}${lower:d}i:
 ${${lower:j}${upper:n}${lower:d}${upper:i}:
+${${upper:j}${upper:n}${upper:d}${upper:i}:
+$%7Bjndi:
+$%7B$%7B::-j%7D$%7B::-n%7D$%7B::-d%7D$%7B::-i%7D:
+$%7B$%7B::-j%7Dndi
+$%7B$%7Blower:jndi%7D:
+$%7B$%7Blower:$%7Blower:jndi%7D%7D:
+$%7B$%7Blower:j%7D$%7Blower:n%7D$%7Blower:d%7Di:
+$%7B$%7Blower:j%7D$%7Bupper:n%7D$%7Blower:d%7D$%7Bupper:i%7D:
+$%7B$%7Bupper:j%7D$%7Bupper:n%7D$%7Bupper:d%7D$%7Bupper:i%7D:
