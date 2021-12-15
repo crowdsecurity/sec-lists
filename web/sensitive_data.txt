@@ -39,3 +39,5 @@
 .dll
 .printer
 .pac
+composer.json
+composer.lock
