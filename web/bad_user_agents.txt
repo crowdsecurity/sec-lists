@@ -194,6 +194,7 @@ Gigablast
 Gigabot
 G-i-g-a-b-o-t
 Go-Ahead-Got-It
+gobuster
 Gotit
 GoZilla
 Go!Zilla

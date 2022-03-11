@@ -194,6 +194,7 @@
 \bGigabot\b
 \bG-i-g-a-b-o-t\b
 \bGo-Ahead-Got-It\b
+\bgobuster\b
 \bGotit\b
 \bGoZilla\b
 \bGo!Zilla\b
