@@ -41,3 +41,4 @@
 .pac
 composer.json
 composer.lock
+debug.log
