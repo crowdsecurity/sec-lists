@@ -290,7 +290,6 @@ lwp-trivial
 Magnet
 Mag-Net
 magpie-crawler
-Mail.RU_Bot
 Majestic12
 Majestic-SEO
 Majestic\ SEO
