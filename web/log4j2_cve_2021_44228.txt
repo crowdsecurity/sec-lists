@@ -31,3 +31,4 @@ $%7Bjnd$%7Bsys:SYS_NAME:-i%7D:
 %24%7Bj%24%7B%24%7B:-l%7D%24%7B:-o%7D%24%7B:-w%7D%24%7B:-e%7D%24%7B:-r%7D:n%7Ddi:
 %24%7B%24%7Bdate:'j'%7D%24%7Bdate:'n'%7D%24%7Bdate:'d'%7D%24%7Bdate:'i'%7D:
 %24%7Bjnd%24%7Bsys:SYS_NAME:-i%7D:
+${jnd${upper:ı}:
