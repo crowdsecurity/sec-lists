@@ -33,3 +33,4 @@ prompt%28
 %3Cp 
 %3Cmeta
 %3Cframeset
+%3Csvg
