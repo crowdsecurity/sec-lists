@@ -290,7 +290,6 @@
 \bMagnet\b
 \bMag-Net\b
 \bmagpie-crawler\b
-\bMail.RU_Bot\b
 \bMajestic12\b
 \bMajestic-SEO\b
 \bMajestic\ SEO\b
