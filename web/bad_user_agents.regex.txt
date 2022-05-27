@@ -202,7 +202,6 @@
 \bGrabNet\b
 \bGrafula\b
 \bGrapeFX\b
-\bGrapeshotCrawler\b
 \bGridBot\b
 \bGT::WWW\b
 \bHaansoft\b
