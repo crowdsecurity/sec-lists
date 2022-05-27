@@ -107,6 +107,7 @@
 \bCogentbot\b
 \bcognitiveseo\b
 \bCollector\b
+\bcolly\b
 \bcom.plumanalytics\b
 \bCopier\b
 \bCopyRightCheck\b
