@@ -10,6 +10,7 @@ ${j${${:-l}${:-o}${:-w}${:-e}${:-r}:n}di:
 ${${date:'j'}${date:'n'}${date:'d'}${date:'i'}:
 ${jnd${sys:SYS_NAME:-i}:
 $%7Bjndi:
+$%7B$%7B:-j%7D$%7B:-n%7D$%7B:-d%7D$%7B:-i%7D:
 $%7B$%7B::-j%7D$%7B::-n%7D$%7B::-d%7D$%7B::-i%7D:
 $%7B$%7B::-j%7Dndi
 $%7B$%7Blower:jndi%7D:
