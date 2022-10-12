@@ -10,4 +10,4 @@ index/\\think\\Container/invokefunction&function=call_user_func_array&vars
 index/%5Cthink%5CContainer/invokefunction&function=call_user_func_array&vars
 index/\\x5Cthink\\x5CContainer/invokefunction&function=call_user_func_array&vars
 index/\\\\think\\\\Container/invokefunction&function=call_user_func_array&vars
-index/\x09hink\x07pp/invokefunction&function=call_user_func_array&vars
+index/\\x09hink\\x07pp/invokefunction&function=call_user_func_array&vars
