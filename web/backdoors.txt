@@ -187,3 +187,6 @@ zehir.asp
 zehir.aspx
 zehir4.asp
 zehir4.aspx
+xleet.php
+xleet-shell.php
+sh3llx.php
