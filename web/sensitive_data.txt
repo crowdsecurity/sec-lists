@@ -40,6 +40,8 @@
 .printer
 .pac
 .aws
+config/aws.yml
+config/secrets.yml
 aws/credentials
 .docker/config.json
 .docker/.env
