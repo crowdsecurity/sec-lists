@@ -47,6 +47,7 @@ aws/credentials
 .docker/.env
 .docker/daemon.json
 .cordova/config.json
+.vscode/sftp.json
 composer.json
 composer.lock
 debug.log
