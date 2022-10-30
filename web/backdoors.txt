@@ -190,3 +190,4 @@ zehir4.aspx
 xleet.php
 xleet-shell.php
 sh3llx.php
+eval-stdin.php
