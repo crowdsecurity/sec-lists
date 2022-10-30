@@ -39,6 +39,7 @@
 .dll
 .printer
 .pac
+.aws
 composer.json
 composer.lock
 debug.log
