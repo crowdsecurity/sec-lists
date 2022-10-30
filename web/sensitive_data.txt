@@ -15,6 +15,7 @@
 .env
 .forward
 .git/HEAD
+.git/config
 .git
 .history
 .hta
