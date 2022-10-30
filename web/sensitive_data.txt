@@ -41,7 +41,7 @@
 .pac
 .aws
 config/aws.yml
-config/secrets.yml
+secrets.yml
 aws/credentials
 .docker/config.json
 .docker/.env
