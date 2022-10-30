@@ -41,6 +41,9 @@
 .pac
 .aws
 aws/credentials
+.docker/config.json
+.docker/.env
+.docker/daemon.json
 composer.json
 composer.lock
 debug.log
