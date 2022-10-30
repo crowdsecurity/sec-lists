@@ -44,6 +44,7 @@ aws/credentials
 .docker/config.json
 .docker/.env
 .docker/daemon.json
+.cordova/config.json
 composer.json
 composer.lock
 debug.log
