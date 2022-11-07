@@ -24,8 +24,8 @@
 =data://
 /proc/self/
 /var/log/
-c:\win.ini
-c:/win.ini
+windows/win.ini
+Windows/win.ini
 C:/inetpub/wwwroot/global.asa
 C:\inetpub\wwwroot\global.asa
 C:/boot.ini
