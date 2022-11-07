@@ -15,6 +15,7 @@
 .env
 .forward
 .git/HEAD
+.git/config
 .git
 .history
 .hta
@@ -39,6 +40,15 @@
 .dll
 .printer
 .pac
+.aws
+config/aws.yml
+secrets.yml
+aws/credentials
+.docker/config.json
+.docker/.env
+.docker/daemon.json
+.cordova/config.json
+.vscode/sftp.json
 composer.json
 composer.lock
 debug.log
