@@ -21,6 +21,7 @@
 .hta
 .htaccess
 .htpasswd
+.lanproxy/config.json
 .listing
 .listings
 .mysql_history
