@@ -26,6 +26,7 @@
 /var/log/
 windows/win.ini
 Windows/win.ini
+%25SYSTEMROOT%25%5Cwin.ini
 C:/inetpub/wwwroot/global.asa
 C:\inetpub\wwwroot\global.asa
 C:/boot.ini
