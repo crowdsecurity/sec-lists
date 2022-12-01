@@ -191,5 +191,3 @@ xleet.php
 xleet-shell.php
 sh3llx.php
 eval-stdin.php
-GponForm/diag_Form?images/
-menu.html?images/

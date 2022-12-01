@@ -38,6 +38,7 @@ env.dev.js
 test-env.json
 env.json
 .forward
+.jupyter/jupyter_notebook_config.json
 .git/HEAD
 .git/config
 .git
@@ -49,6 +50,7 @@ env.json
 .lanproxy/config.json
 .listing
 .listings
+.msmtprc
 .mysql_history
 .passwd
 .pwd
@@ -73,8 +75,10 @@ env.json
 aws-key.yml
 config/aws.yml
 secrets.yml
+secrets.json
 aws/credentials
 .config/gatsby/config.json
+.deployment-config.json
 .docker/config.json
 .docker/.env
 .docker/daemon.json
