@@ -309,7 +309,6 @@ mediawords
 MegaIndex.ru
 Metauri
 MFC_Tear_Sample
-MicroMessenger
 Microsoft\ Data\ Access
 Microsoft\ URL\ Control
 MIDown\ tool

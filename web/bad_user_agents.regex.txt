@@ -309,7 +309,6 @@
 \bMegaIndex.ru\b
 \bMetauri\b
 \bMFC_Tear_Sample\b
-\bMicroMessenger\b
 \bMicrosoft\ Data\ Access\b
 \bMicrosoft\ URL\ Control\b
 \bMIDown\ tool\b
