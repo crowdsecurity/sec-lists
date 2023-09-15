@@ -579,7 +579,6 @@
 \bWhatweb\b
 \bWho.is\ Bot\b
 \bWidow\b
-\bWindows\ NT\ 5.0\b
 \bWinHTTrack\b
 \bWiseGuys\ Robot\b
 \bWISENutbot\b
