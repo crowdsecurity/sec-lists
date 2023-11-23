@@ -8,3 +8,4 @@
 .crawl.yahoo.net.
 .search.qwant.com.
 .babbar.eu.
+.crawl.sogou.com
