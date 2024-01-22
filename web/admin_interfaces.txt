@@ -1,0 +1,6 @@
+/phpmyadmin
+/pma
+/admin
+/wp-admin
+/manager
+/wp-login
