@@ -4,3 +4,7 @@
 /wp-admin
 /manager
 /wp-login
+/solr/
+/boaform/
+/phpinfo
+/kcfinder/upload.php
