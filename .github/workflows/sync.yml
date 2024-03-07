@@ -1,0 +1,27 @@
+
+name: Sync
+on:
+  push:
+    branches: [ master,sync ]
+  pull_request:
+    branches:
+      - master
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        role-to-assume: ${{ secrets.AWS_SYNC_ROLE }}
+        role-session-name: github-action-sync
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Sync content
+      run: |
+        pwd
+        find .
