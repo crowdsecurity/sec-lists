@@ -26,5 +26,5 @@ jobs:
 
     - name: Sync content
       run: |
-        pwd
-        find .
+        apt-get install -y awscli
+        aws s3 sync --dry-run . s3://crowdsec-hub
