@@ -27,4 +27,4 @@ jobs:
     - name: Sync content
       run: |
         sudo apt-get install -y awscli
-        aws s3 --dry-run sync . s3://crowdsec-hub
+        aws s3 sync . s3://crowdsec-hub
