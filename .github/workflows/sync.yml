@@ -2,10 +2,7 @@
 name: Sync
 on:
   push:
-    branches: [ master,sync ]
-  pull_request:
-    branches:
-      - master
+    branches: master
 jobs:
   sync:
     runs-on: ubuntu-latest
