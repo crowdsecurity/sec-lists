@@ -1,0 +1,27 @@
+
+name: Sync
+on:
+  push:
+    branches: master
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_SYNC_ROLE }}
+        role-session-name: github-action-sync
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Sync content
+      run: |
+        sudo apt-get install -y awscli
+        aws s3 sync . s3://crowdsec-hub --exclude ".git/*" --exclude ".github/*"
