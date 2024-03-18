@@ -1,3 +1,4 @@
+#usual suspects
 /phpmyadmin
 /pma
 /admin
@@ -5,6 +6,12 @@
 /manager
 /wp-login
 /solr/
-/boaform/
 /phpinfo
+#cve-2020-8958
+/boaform/
+#kcfinder file manager
 /kcfinder/upload.php
+#cisco asa
+/+cscoe+/
+#ivanti cve(s)
+/dana-na/
