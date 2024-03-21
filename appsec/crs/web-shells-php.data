@@ -13,7 +13,7 @@
 # Data comes from multiple places of which some doesn't work anymore. Few are
 # listed below:
 # - https://github.com/JohnTroony/php-webshells/tree/master/Collection
-# - https://www.localroot.net/shell/
+# - https://www.localroot.net/
 # - Google search (keywords like webshells, php backdoor and similar)
 
 # 1n73ction web shell
@@ -22,11 +22,11 @@
 >Ajax/PHP Command Shell<
 # AK-74 Security Team Web-shell
 .:: :[ AK-74 Security Team Web-shell ]: ::.
-# ALFA-SHELL web shell (https://github.com/solevisible)
+# ALFA-SHELL web shell (deprecated, https://github.com/solevisible)
 ~ ALFA TEaM Shell -
 # Andela Yuwono Priv8 Shell web shell
 <title>--==[[ Andela Yuwono Priv8 Shell ]]==--</title>
-# Ani-Shell web shell (http://ani-shell.sourceforge.net/)
+# Ani-Shell web shell (https://ani-shell.sourceforge.net/)
 <title>Ani-Shell | India</title>
 # AnonymousFox PHP web shell
 <input type='submit' value='file' /></form>AnonymousFox
@@ -48,6 +48,8 @@ title='.::[c0derz shell]::.'>
 <title>Con7ext Shell V.2</title>
 # Crystal shell web shell
 <font face="Wingdings 3" size="5">y</font><b>Crystal shell v.
+# Unknown (probably private) web shell
+<title>CUPLIS BYPASSS SHELL</title>
 # CWShell web shell
 ~ CWShell ~</font></a>
 # dC3 Security Crew web shell
@@ -146,7 +148,7 @@ PHPShell by MAX666, Private Exploit, For Server Hacking
 # web shell by BLaSTER
 <div align="center"><span class="style6">By BLaSTER</span><br />
 # WinX Shell web shell
-<title>-:[GreenwooD]:- WinX Shell</title>
+<head><title>-:[GreenwooD]:- WinX Shell</title>
 # wwwolf web shell
 <sup><a href="#" onclick="cmd.value=''; cmd.focus(); return false;">Clear cmd</a></sup>
 # Yourman.sh Mini Shell web shell
