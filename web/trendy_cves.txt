@@ -12,3 +12,4 @@
 /setup.cgi
 #CVE-2024-4040
 /webinterface/login.html
+/webinterface/
