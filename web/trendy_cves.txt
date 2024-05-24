@@ -10,3 +10,6 @@
 /_ignition/execute-solution
 #CVE-2020-27866
 /setup.cgi
+#CVE-2024-4040
+/webinterface/login.html
+/webinterface/
