@@ -15,3 +15,5 @@
 /+cscoe+/
 #ivanti cve(s)
 /dana-na/
+#metasploit
+/repeater.php
