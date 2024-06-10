@@ -15,3 +15,5 @@
 /webinterface/
 #cve-2024-24919
 /clients/mycrl
+#CVE-2024-4577
+?%ad
