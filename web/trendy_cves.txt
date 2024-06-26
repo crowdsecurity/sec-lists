@@ -17,3 +17,5 @@
 /clients/mycrl
 #CVE-2024-4577
 ?%ad
+#CVE-2024-5806
+/guestaccess.aspx
