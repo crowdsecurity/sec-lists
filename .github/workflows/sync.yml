@@ -24,4 +24,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y awscli
-          aws s3 sync . s3://crowdsec-hub --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync --content-type text/plain --metadata-directive REPLACE . s3://crowdsec-hub --exclude ".git/*" --exclude ".github/*"
