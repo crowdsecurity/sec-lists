@@ -19,3 +19,5 @@
 ?%ad
 #CVE-2024-5806 or CVE-2024-5805
 /guestaccess.aspx
+#CVE-2024-0769
+/hedwig.cgi
