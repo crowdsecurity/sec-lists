@@ -101,7 +101,6 @@
 \bClaritybot\b
 \bCliqzbot\b
 \bCloud\ mapping\b
-\bcoccocbot-web\b
 \bCocolyzebot\b
 \bCODE87\b
 \bCogentbot\b
