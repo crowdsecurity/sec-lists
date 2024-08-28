@@ -101,7 +101,6 @@ Chlooe
 Claritybot
 Cliqzbot
 Cloud\ mapping
-coccocbot-web
 Cocolyzebot
 CODE87
 Cogentbot
