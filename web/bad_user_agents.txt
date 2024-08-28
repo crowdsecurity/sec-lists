@@ -318,7 +318,6 @@ Mojeek
 Mojolicious
 Morfeus\ Fucking\ Scanner
 Mozlila
-MQQBrowser
 Mr.4x3
 MSFrontPage
 MSIECrawler
