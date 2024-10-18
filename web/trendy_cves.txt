@@ -15,9 +15,11 @@
 /webinterface/
 #cve-2024-24919
 /clients/mycrl
-#CVE-2024-4577
+#cve-2024-4577
 ?%ad
-#CVE-2024-5806 or CVE-2024-5805
+#cve-2024-5806 or cve-2024-5805
 /guestaccess.aspx
-#CVE-2024-0769
+#cve-2024-0769
 /hedwig.cgi
+#cve-2019-8318
+/hnap1/
