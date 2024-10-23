@@ -21,3 +21,5 @@
 /guestaccess.aspx
 #CVE-2024-0769
 /hedwig.cgi
+#CVE-2021-33044
+/rpc2_login
