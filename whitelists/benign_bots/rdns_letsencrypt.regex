@@ -1,2 +1,2 @@
-^outbound[0-9a-f]+.letsencrypt.org.$
+^outbound[0-9a-z]+.letsencrypt.org.$
 

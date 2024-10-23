@@ -23,3 +23,7 @@
 /hedwig.cgi
 #cve-2019-8318
 /hnap1/
+#CVE-2024-8190
+/gsb/datetime.php
+#CVE-2021-33044
+/rpc2_login

@@ -101,7 +101,6 @@
 \bClaritybot\b
 \bCliqzbot\b
 \bCloud\ mapping\b
-\bcoccocbot-web\b
 \bCocolyzebot\b
 \bCODE87\b
 \bCogentbot\b
@@ -319,7 +318,6 @@
 \bMojolicious\b
 \bMorfeus\ Fucking\ Scanner\b
 \bMozlila\b
-\bMQQBrowser\b
 \bMr.4x3\b
 \bMSFrontPage\b
 \bMSIECrawler\b
