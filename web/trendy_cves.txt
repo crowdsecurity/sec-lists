@@ -21,5 +21,7 @@
 /guestaccess.aspx
 #CVE-2024-0769
 /hedwig.cgi
+#CVE-2024-8190
+/gsb/datetime.php
 #CVE-2021-33044
 /rpc2_login
