@@ -26,7 +26,6 @@ bloodsecv4.php
 browser.jsp
 bug.php
 bypass.php
-c.php
 c100.php
 c37.php
 c66.php
