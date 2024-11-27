@@ -27,3 +27,5 @@
 /gsb/datetime.php
 #CVE-2021-33044
 /rpc2_login
+#CVE-2024-8963
+/client/index.php%3F.php/gsb/users.php
