@@ -6,7 +6,7 @@
 .crawl.baidu.com.
 .crawl.baidu.jp.
 .crawl.yahoo.net.
-.search.qwant.com.
+.qwant.com.
 .babbar.eu.
 .crawl.amazonbot.amazon.
 .crawl.sogou.com.
