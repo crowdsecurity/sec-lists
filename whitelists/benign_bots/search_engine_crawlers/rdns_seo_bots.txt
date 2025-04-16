@@ -8,5 +8,6 @@
 .crawl.yahoo.net.
 .qwant.com.
 .babbar.eu.
+.babbar.tech.
 .crawl.amazonbot.amazon.
 .crawl.sogou.com.
