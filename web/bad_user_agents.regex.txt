@@ -23,7 +23,7 @@
 #
 \b360Spider\b
 \b404checker\b
-\b\b404enemy\b\b
+\b404enemy\b
 \b80legs\b
 \bAbonti\b
 \bAboundex\b
