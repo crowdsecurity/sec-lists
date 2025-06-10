@@ -1,3 +1,4 @@
+1.php
 1337.php
 150.php
 3fexe.asp
@@ -127,6 +128,7 @@ Non-alphanumeric.php
 NTDaddy_v1.9.php
 ntdaddy.asp
 obfuscated-punknopass.php
+password.php
 PerlWebShellbyRST-GHC.pl
 PHANTASMA.php
 Php_Backdoor.txt.php
@@ -176,6 +178,7 @@ spyshell.php
 sql.aspx
 STNC_WebShell_v0.8.php
 stres.php
+t4
 tool.asp
 toolaspshell.asp
 tryag.php
@@ -185,6 +188,7 @@ up.asp
 up.jsp
 up.pl
 upfile.php
+upl.php
 upl0ader.php
 weevely.php
 wewo.pl
@@ -203,4 +207,3 @@ zehir4.asp
 zehir4.aspx
 zehir4.php
 ZyklonShell.php
-upl.php
