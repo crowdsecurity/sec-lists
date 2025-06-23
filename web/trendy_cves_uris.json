@@ -17,3 +17,4 @@
 {"cve": "CVE-2025-0108",  "uri": "/unauth/%252e%252e/php/"}
 {"cve": "CVE-2025-31324", "uri": "/developmentserver/metadatauploader"}
 {"cve": "CVE-2024-38653", "uri": "/mdm/checkin"}
+{"cve": "CVE-2025-34509", "uri": "/sitecore/api/ssc/auth/login"}
