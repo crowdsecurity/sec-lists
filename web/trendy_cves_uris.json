@@ -20,3 +20,4 @@
 {"cve": "CVE-2025-34509", "uri": "/sitecore/api/ssc/auth/login"}
 {"cve": "CVE-2023-6549",  "uri": "/nf/auth/startwebview.do"}
 {"cve": "CVE-2025-5777",  "uri": "/p/u/doauthentication.do"}
+{"cve": "CVE-2025-25257", "uri": "/api/fabric/device/status"}
