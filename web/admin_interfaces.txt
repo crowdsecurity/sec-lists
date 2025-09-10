@@ -1,11 +1,13 @@
-#usual suspects
+#generic ones
+/admin
+/manager
+#phpmyadmin
 /phpmyadmin
 /pma
-/admin
+#wordpress
 /wp-admin
-/manager
 /wp-login
-/solr/
+#generic php
 /phpinfo
 #cve-2020-8958
 /boaform/
@@ -40,3 +42,7 @@
 /rsso/admin/
 #rcdevs
 /admin/login_uid.php
+#fortinet
+/remote/login
+#commvault
+/commandcenter/restservlet/
