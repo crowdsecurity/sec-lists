@@ -1,0 +1,68 @@
+name: Sync Disposable Email Domains
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # every Sunday at midnight
+  workflow_dispatch: {} # manual trigger
+
+permissions:
+  contents: write
+
+env:
+  REMOTE_JSON_URL: "https://deviceandbrowserinfo.com/api/emails/disposable"
+  OUTPUT_FILE: "appsec/disposable_email_domains.data"
+
+jobs:
+  sync-disposable-email-domains:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq curl
+
+      - name: Download and validate JSON
+        run: |
+          set -euo pipefail
+          curl -fsSL "$REMOTE_JSON_URL" -o /tmp/domains.json
+          # Fail if invalid JSON or not an array
+          jq -e 'type == "array"' /tmp/domains.json > /dev/null
+
+      - name: Convert JSON array to line-delimited file
+        run: |
+          set -euo pipefail
+          mkdir -p "$(dirname "$OUTPUT_FILE")"
+          # Add a credit to the file
+          echo "# Source: $REMOTE_JSON_URL" > /tmp/out.txt
+          echo "# Thanks to Antoine Vastel for making this data available" >> /tmp/out.txt
+          jq -r '.[] ' /tmp/domains.json | sort >> /tmp/out.txt
+          [[ -f "$OUTPUT_FILE" ]] || : > "$OUTPUT_FILE"
+          # Only replace if content actually changed
+          if cmp -s /tmp/out.txt "$OUTPUT_FILE"; then
+            echo "No changes detected."
+            echo "NEEDS_UPDATE=false" >> $GITHUB_ENV
+          else
+            mv /tmp/out.txt "$OUTPUT_FILE"
+            echo "NEEDS_UPDATE=true" >> $GITHUB_ENV
+          fi
+
+      - name: Commit changes (skip if no changes)
+        if: env.NEEDS_UPDATE == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$OUTPUT_FILE"
+          git commit -m "Weekly sync: update from $REMOTE_JSON_URL" || exit 0
+
+      - name: Push to master
+        if: env.NEEDS_UPDATE == 'false'
+        run: |
+          set -euo pipefail
+          git push origin HEAD:master
