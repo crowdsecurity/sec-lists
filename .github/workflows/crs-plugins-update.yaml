@@ -41,7 +41,8 @@ jobs:
                     exit 0
                   fi
                   echo "Latest version is $UPSTREAM_LATEST_VERSION"
-                  if [ "$UPSTREAM_LATEST_VERSION" != "$(cat .github/crs-plugins/${{ matrix.item }}.txt)" ]; then
+                  REPO_NAME=$(echo ${{ matrix.item }} | cut -d'/' -f2)
+                  if [ "$UPSTREAM_LATEST_VERSION" != "$(cat .github/crs-plugins/$REPO_NAME.txt)" ]; then
                     echo "Update needed for ${{ matrix.item }} to version $UPSTREAM_LATEST_VERSION"
                     echo "UPSTREAM_LATEST_VERSION=$UPSTREAM_LATEST_VERSION" >> $GITHUB_ENV
                   else
@@ -54,7 +55,10 @@ jobs:
 
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  git checkout -b update-${{ matrix.item }}-${{ env.UPSTREAM_LATEST_VERSION }}
+
+                  BRANCH_NAME=update-${{ matrix.item }}-${{ env.UPSTREAM_LATEST_VERSION }}-$(date +%s)
+
+                  git checkout -b $BRANCH_NAME
 
                   REPO_NAME=$(echo ${{ matrix.item }} | cut -d'/' -f2)
 
@@ -68,6 +72,6 @@ jobs:
 
                   git add .github/crs-plugins/$REPO_NAME.txt appsec/crs-plugins/$REPO_NAME/*.conf
                   git commit -m "Update $REPO_NAME plugin to version ${{ env.UPSTREAM_LATEST_VERSION }}"
-                  git push --set-upstream origin update-${{ matrix.item }}-${{ env.UPSTREAM_LATEST_VERSION }}
+                  git push --set-upstream origin $BRANCH_NAME --force-with-lease
 
                   gh pr create --title "Update $REPO_NAME plugin to version ${{ env.UPSTREAM_LATEST_VERSION }}" --body "This PR updates the $REPO_NAME plugin to version ${{ env.UPSTREAM_LATEST_VERSION }}." --label "plugin update"
