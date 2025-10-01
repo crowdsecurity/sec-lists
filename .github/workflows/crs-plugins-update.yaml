@@ -12,7 +12,6 @@ permissions:
 jobs:
     sync:
         runs-on: ubuntu-latest
-        continue-on-error: true # We do not want to skip other plugins if one fails
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         strategy:
@@ -28,6 +27,7 @@ jobs:
                         "coreruleset/cpanel-rule-exclusions-plugin",
                         "coreruleset/xenforo-rule-exclusions-plugin",
                     ]
+            fail-fast: false # We want to try all plugins even if one fails, but still report failure if any fail
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
