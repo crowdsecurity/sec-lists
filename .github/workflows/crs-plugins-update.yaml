@@ -1,0 +1,77 @@
+name: Sync CRS Plugins
+on:
+    schedule:
+        - cron: "0 0 * * *" # every day at midnight
+    workflow_dispatch:
+
+# Needs to push a branch and open PRs
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        strategy:
+            matrix:
+                item:
+                    [
+                        "coreruleset/phpmyadmin-rule-exclusions-plugin",
+                        "coreruleset/wordpress-rule-exclusions-plugin",
+                        "coreruleset/dokuwiki-rule-exclusions-plugin",
+                        "coreruleset/drupal-rule-exclusions-plugin",
+                        "coreruleset/nextcloud-rule-exclusions-plugin",
+                        "coreruleset/phpbb-rule-exclusions-plugin",
+                        "coreruleset/cpanel-rule-exclusions-plugin",
+                        "coreruleset/xenforo-rule-exclusions-plugin",
+                    ]
+            fail-fast: false # We want to try all plugins even if one fails, but still report failure if any fail
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - name: Check if update is needed
+              run: |
+                  UPSTREAM_LATEST_VERSION=$(gh api repos/${{ matrix.item }}/releases/latest -q .tag_name)
+                  if [ -z "$UPSTREAM_LATEST_VERSION" ]; then
+                    echo "No releases found for ${{ matrix.item }}, skipping."
+                    exit 0
+                  fi
+                  echo "Latest version is $UPSTREAM_LATEST_VERSION"
+                  REPO_NAME=$(echo ${{ matrix.item }} | cut -d'/' -f2)
+                  if [ "$UPSTREAM_LATEST_VERSION" != "$(cat .github/crs-plugins/$REPO_NAME.txt)" ]; then
+                    echo "Update needed for ${{ matrix.item }} to version $UPSTREAM_LATEST_VERSION"
+                    echo "UPSTREAM_LATEST_VERSION=$UPSTREAM_LATEST_VERSION" >> $GITHUB_ENV
+                  else
+                    echo "No update needed for ${{ matrix.item }}"
+                  fi
+            - name: Update plugin
+              if: env.UPSTREAM_LATEST_VERSION != ''
+              run: |
+                  gh release download ${{ env.UPSTREAM_LATEST_VERSION }} --repo ${{ matrix.item }} -A tar.gz
+
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+                  BRANCH_NAME=update-${{ matrix.item }}-${{ env.UPSTREAM_LATEST_VERSION }}-$(date +%s)
+
+                  git checkout -b $BRANCH_NAME
+
+                  REPO_NAME=$(echo ${{ matrix.item }} | cut -d'/' -f2)
+
+                  mkdir -p .github/crs-plugins/
+                  mkdir -p appsec/crs-plugins/$REPO_NAME
+
+                  tar -xzf $REPO_NAME-*.tar.gz --strip-components=1
+                  mv plugins/*.conf appsec/crs-plugins/$REPO_NAME/
+                  rm -rf plugins
+                  echo -n ${{ env.UPSTREAM_LATEST_VERSION }} > .github/crs-plugins/$REPO_NAME.txt
+
+                  git add .github/crs-plugins/$REPO_NAME.txt appsec/crs-plugins/$REPO_NAME/*.conf
+                  git commit -m "Update $REPO_NAME plugin to version ${{ env.UPSTREAM_LATEST_VERSION }}"
+                  git push --set-upstream origin $BRANCH_NAME --force-with-lease
+
+                  gh pr create --title "Update $REPO_NAME plugin to version ${{ env.UPSTREAM_LATEST_VERSION }}" --body "This PR updates the $REPO_NAME plugin to version ${{ env.UPSTREAM_LATEST_VERSION }}." --label "plugin update"
