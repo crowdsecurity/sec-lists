@@ -22,3 +22,5 @@
 {"cve": "CVE-2025-5777",  "uri": "/p/u/doauthentication.do"}
 {"cve": "CVE-2025-25257", "uri": "/api/fabric/device/status"}
 {"cve": "CVE-2025-53770", "uri": "/_layouts/15/toolpane.aspx"}
+{"cve": "CVE-2023-0669", "uri": "/goanywhere/lic/accept"}
+{"cve": "CVE-2024-0204", "uri": "/goanywhere/images/.."}
