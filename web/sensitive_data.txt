@@ -17,6 +17,7 @@
 env.bak
 env.backup
 .env.dev
+.env.development
 .env.development.local
 .env.dist
 .env.docker.dev
@@ -26,6 +27,8 @@ env.backup
 .env.production.local
 .env.sample.php
 .env.save
+.env.backup
+.env.staging
 .env.stage
 .env.test
 .environment
