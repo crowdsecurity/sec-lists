@@ -24,4 +24,4 @@
 {"cve": "CVE-2025-53770", "uri": "/_layouts/15/toolpane.aspx"}
 {"cve": "CVE-2023-0669", "uri": "/goanywhere/lic/accept"}
 {"cve": "CVE-2024-0204", "uri": "/goanywhere/images/.."}
-{"cve": "CVE-2025-64446", "uri": "/api/v2.0/cmdb/system/admin?/../../../../../cgi-bin/fwbcgi"}
+{"cve": "CVE-2025-64446", "uri": "/api/v2.0/cmdb/system/admin%3f/../../../../../cgi-bin/fwbcgi"}
