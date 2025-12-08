@@ -1,7 +1,9 @@
 name: Sync R2
 on:
   push:
-    branches: master
+    branches:
+      - master
+      - r2/sync
 jobs:
   sync-r2:
     runs-on: ubuntu-latest
