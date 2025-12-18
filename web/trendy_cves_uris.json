@@ -1,27 +1,112 @@
-{"cve": "CVE-2024-3400",  "uri": "/global-protect/login.esp"}
-{"cve": "CVE-2024-3272",  "uri": "/cgi-bin/nas_sharing.cgi"}
-{"cve": "CVE-2018-12031", "uri": "/server/node_upgrade_srv.js"}
-{"cve": "CVE-2021-36380", "uri": "/cgi/networkdiag.cgi"}
-{"cve": "CVE-2021-3129",  "uri": "/_ignition/execute-solution"}
-{"cve": "CVE-2020-27866", "uri": "/setup.cgi"}
-{"cve": "CVE-2024-4040",  "uri": "/webinterface/login.html"}
-{"cve": "CVE-2024-4040",  "uri": "/webinterface/"}
-{"cve": "CVE-2024-24919", "uri": "/clients/mycrl"}
-{"cve": "CVE-2024-4577",  "uri": "?%ad"}
-{"cve": "CVE-2024-5806",  "uri": "/guestaccess.aspx"}
-{"cve": "CVE-2024-0769",  "uri": "/hedwig.cgi"}
-{"cve": "CVE-2019-8318",  "uri": "/hnap1/"}
-{"cve": "CVE-2024-8190",  "uri": "/gsb/datetime.php"}
-{"cve": "CVE-2021-33044", "uri": "/rpc2_login"}
-{"cve": "CVE-2024-8963",  "uri": "index.php%3f.php/"}
-{"cve": "CVE-2025-0108",  "uri": "/unauth/%252e%252e/php/"}
-{"cve": "CVE-2025-31324", "uri": "/developmentserver/metadatauploader"}
-{"cve": "CVE-2024-38653", "uri": "/mdm/checkin"}
-{"cve": "CVE-2025-34509", "uri": "/sitecore/api/ssc/auth/login"}
-{"cve": "CVE-2023-6549",  "uri": "/nf/auth/startwebview.do"}
-{"cve": "CVE-2025-5777",  "uri": "/p/u/doauthentication.do"}
-{"cve": "CVE-2025-25257", "uri": "/api/fabric/device/status"}
-{"cve": "CVE-2025-53770", "uri": "/_layouts/15/toolpane.aspx"}
-{"cve": "CVE-2023-0669", "uri": "/goanywhere/lic/accept"}
-{"cve": "CVE-2024-0204", "uri": "/goanywhere/images/.."}
-{"cve": "CVE-2025-64446", "uri": "/api/v2.0/cmdb/system/admin%3f/../../../../../cgi-bin/fwbcgi"}
+{
+    "cve": "CVE-2024-3400",
+    "uri": "/global-protect/login.esp"
+}
+{
+    "cve": "CVE-2024-3272",
+    "uri": "/cgi-bin/nas_sharing.cgi"
+}
+{
+    "cve": "CVE-2018-12031",
+    "uri": "/server/node_upgrade_srv.js"
+}
+{
+    "cve": "CVE-2021-36380",
+    "uri": "/cgi/networkdiag.cgi"
+}
+{
+    "cve": "CVE-2021-3129",
+    "uri": "/_ignition/execute-solution"
+}
+{
+    "cve": "CVE-2020-27866",
+    "uri": "/setup.cgi"
+}
+{
+    "cve": "CVE-2024-4040",
+    "uri": "/webinterface/login.html"
+}
+{
+    "cve": "CVE-2024-4040",
+    "uri": "/webinterface/"
+}
+{
+    "cve": "CVE-2024-24919",
+    "uri": "/clients/mycrl"
+}
+{
+    "cve": "CVE-2024-4577",
+    "uri": "?%ad"
+}
+{
+    "cve": "CVE-2024-5806",
+    "uri": "/guestaccess.aspx"
+}
+{
+    "cve": "CVE-2024-0769",
+    "uri": "/hedwig.cgi"
+}
+{
+    "cve": "CVE-2019-8318",
+    "uri": "/hnap1/"
+}
+{
+    "cve": "CVE-2024-8190",
+    "uri": "/gsb/datetime.php"
+}
+{
+    "cve": "CVE-2021-33044",
+    "uri": "/rpc2_login"
+}
+{
+    "cve": "CVE-2024-8963",
+    "uri": "index.php%3f.php/"
+}
+{
+    "cve": "CVE-2025-0108",
+    "uri": "/unauth/%252e%252e/php/"
+}
+{
+    "cve": "CVE-2025-31324",
+    "uri": "/developmentserver/metadatauploader"
+}
+{
+    "cve": "CVE-2024-38653",
+    "uri": "/mdm/checkin"
+}
+{
+    "cve": "CVE-2025-34509",
+    "uri": "/sitecore/api/ssc/auth/login"
+}
+{
+    "cve": "CVE-2023-6549",
+    "uri": "/nf/auth/startwebview.do"
+}
+{
+    "cve": "CVE-2025-5777",
+    "uri": "/p/u/doauthentication.do"
+}
+{
+    "cve": "CVE-2025-25257",
+    "uri": "/api/fabric/device/status"
+}
+{
+    "cve": "CVE-2025-53770",
+    "uri": "/_layouts/15/toolpane.aspx"
+}
+{
+    "cve": "CVE-2023-0669",
+    "uri": "/goanywhere/lic/accept"
+}
+{
+    "cve": "CVE-2024-0204",
+    "uri": "/goanywhere/images/.."
+}
+{
+    "cve": "CVE-2025-64446",
+    "uri": "/api/v2.0/cmdb/system/admin%3f/../../../../../cgi-bin/fwbcgi"
+}
+{
+    "cve": "CVE-2025-59718",
+    "uri": "/remote/saml/login"
+}
