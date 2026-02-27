@@ -26,3 +26,6 @@
 {"cve": "CVE-2024-0204", "uri": "/goanywhere/images/.."}
 {"cve": "CVE-2025-64446", "uri": "/api/v2.0/cmdb/system/admin%3f/../../../../../cgi-bin/fwbcgi"}
 {"cve": "CVE-2025-59718", "uri": "/remote/saml/login"}
+{"cve": "CVE-2025-40553", "uri": "/helpdesk/WebObjects/Helpdesk.woa/ajax/9.7.43.0.0.0.4.3.7.0.7.1.1.1"}
+{"cve": "CVE-2025-40553", "uri": "/helpdesk/WebObjects/Helpdesk.woa/ajax/2.0.7.1.1.1"}
+{"cve": "CVE-2025-40552", "uri": "/helpdesk/WebObjects/Helpdesk.woa/wo/"}
