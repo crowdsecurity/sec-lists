@@ -29,3 +29,4 @@
 {"cve": "CVE-2025-40553", "uri": "/helpdesk/WebObjects/Helpdesk.woa/ajax/9.7.43.0.0.0.4.3.7.0.7.1.1.1"}
 {"cve": "CVE-2025-40553", "uri": "/helpdesk/WebObjects/Helpdesk.woa/ajax/2.0.7.1.1.1"}
 {"cve": "CVE-2025-40552", "uri": "/helpdesk/WebObjects/Helpdesk.woa/wo/"}
+{"cve": "CVE-2026-20127", "uri": "/reports/data/opt/data/containers/config/data-collection-agent/.dca"}
