@@ -1,0 +1,126 @@
+name: Sync External Sources
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # every day at midnight UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-external-sources:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: external-allowlist-replication # TODO: change back to master before merging
+          fetch-depth: 0
+
+      - name: Download and process sources
+        run: |
+          set -euo pipefail
+
+          CONFIG_FILE=".github/sync-sources.json"
+          CHANGED_FILES=""
+          CHANGED_NAMES=""
+          ERRORS=""
+
+          jq -e 'type == "array"' "$CONFIG_FILE" > /dev/null
+
+          COUNT=$(jq 'length' "$CONFIG_FILE")
+          echo "Processing $COUNT sources..."
+
+          for i in $(seq 0 $(( COUNT - 1 ))); do
+            NAME=$(jq -r ".[$i].name" "$CONFIG_FILE")
+            URL=$(jq -r ".[$i].url" "$CONFIG_FILE")
+            OUTPUT=$(jq -r ".[$i].output" "$CONFIG_FILE")
+            JQ_FILTER=$(jq -r ".[$i].jq_filter // empty" "$CONFIG_FILE")
+            HEADER=$(jq -r ".[$i].header // empty" "$CONFIG_FILE")
+
+            echo "--- Processing: $NAME ---"
+            echo "  URL: $URL"
+            echo "  Output: $OUTPUT"
+
+            TMPFILE=$(mktemp)
+            if ! curl -fsSL "$URL" -o "$TMPFILE"; then
+              echo "::warning::Failed to download $NAME from $URL"
+              ERRORS="$ERRORS $NAME"
+              rm -f "$TMPFILE"
+              continue
+            fi
+
+            OUTFILE=$(mktemp)
+
+            if [ -n "$HEADER" ]; then
+              echo "$HEADER" > "$OUTFILE"
+            else
+              : > "$OUTFILE"
+            fi
+
+            if [ -n "$JQ_FILTER" ]; then
+              if ! jq -r "$JQ_FILTER" "$TMPFILE" >> "$OUTFILE"; then
+                echo "::warning::jq filter failed for $NAME"
+                ERRORS="$ERRORS $NAME"
+                rm -f "$TMPFILE" "$OUTFILE"
+                continue
+              fi
+            else
+              cat "$TMPFILE" >> "$OUTFILE"
+            fi
+
+            rm -f "$TMPFILE"
+
+            mkdir -p "$(dirname "$OUTPUT")"
+
+            if [ -f "$OUTPUT" ] && cmp -s "$OUTFILE" "$OUTPUT"; then
+              echo "  No changes for $NAME"
+              rm -f "$OUTFILE"
+            else
+              mv "$OUTFILE" "$OUTPUT"
+              echo "  Updated: $OUTPUT"
+              CHANGED_FILES="$CHANGED_FILES $OUTPUT"
+              CHANGED_NAMES="$CHANGED_NAMES $NAME"
+            fi
+          done
+
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "NEEDS_UPDATE=true" >> "$GITHUB_ENV"
+            echo "CHANGED_FILES=$CHANGED_FILES" >> "$GITHUB_ENV"
+            echo "CHANGED_NAMES=$CHANGED_NAMES" >> "$GITHUB_ENV"
+          else
+            echo "NEEDS_UPDATE=false" >> "$GITHUB_ENV"
+          fi
+
+          if [ -n "$ERRORS" ]; then
+            echo "::warning::Errors occurred for:$ERRORS"
+          fi
+
+      - name: Create PR with changes
+        if: env.NEEDS_UPDATE == 'true'
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          BRANCH_NAME="sync-external-sources-$(date +%s)"
+          git checkout -b "$BRANCH_NAME"
+
+          for f in ${{ env.CHANGED_FILES }}; do
+            git add "$f"
+          done
+          git commit -m "Sync external sources:${{ env.CHANGED_NAMES }}"
+
+          git push --set-upstream origin "$BRANCH_NAME"
+
+          PR_URL=$(gh pr create \
+            --title "Sync external sources:${{ env.CHANGED_NAMES }}" \
+            --body "Automated update of external sources. Changed files: ${{ env.CHANGED_FILES }}")
+
+          gh pr merge --auto --merge "$PR_URL"
