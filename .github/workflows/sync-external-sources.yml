@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 0 * * *" # every day at midnight UTC
   workflow_dispatch: {}
-  push: # TODO: remove before merging
-    branches:
-      - external-allowlist-replication
 
 permissions:
   contents: write
@@ -22,7 +19,7 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v4
         with:
-          ref: external-allowlist-replication # TODO: change back to master before merging
+          ref: master
           fetch-depth: 0
 
       - name: Download and process sources
