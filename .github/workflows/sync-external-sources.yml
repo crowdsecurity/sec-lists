@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 0 * * *" # every day at midnight UTC
   workflow_dispatch: {}
+  push: # TODO: remove before merging
+    branches:
+      - external-allowlist-replication
 
 permissions:
   contents: write
