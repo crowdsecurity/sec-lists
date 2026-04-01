@@ -122,5 +122,3 @@ jobs:
           PR_URL=$(gh pr create \
             --title "Sync external sources:${{ env.CHANGED_NAMES }}" \
             --body "Automated update of external sources. Changed files: ${{ env.CHANGED_FILES }}")
-
-          gh pr merge --auto --merge "$PR_URL"
