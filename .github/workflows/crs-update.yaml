@@ -1,0 +1,116 @@
+name: Sync CRS Rules
+on:
+    schedule:
+        - cron: "0 0 * * *" # every day at midnight
+    workflow_dispatch:
+
+# Needs to push a branch and open PRs
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    sync-crs:
+        runs-on: ubuntu-latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            CRS_REPO: coreruleset/coreruleset
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - name: Check for new CRS release
+              run: |
+                  set -euo pipefail
+
+                  UPSTREAM_VERSION=$(gh api repos/$CRS_REPO/releases/latest -q .tag_name)
+                  if [ -z "$UPSTREAM_VERSION" ]; then
+                    echo "::error::Failed to fetch latest CRS release"
+                    exit 1
+                  fi
+                  echo "Latest upstream version: $UPSTREAM_VERSION"
+
+                  CURRENT_VERSION=$(cat .github/crs-version.txt 2>/dev/null || echo "")
+                  echo "Current tracked version: $CURRENT_VERSION"
+
+                  if [ "$UPSTREAM_VERSION" = "$CURRENT_VERSION" ]; then
+                    echo "Already up to date at $UPSTREAM_VERSION"
+                    exit 0
+                  fi
+
+                  # Strip 'v' prefix for directory naming
+                  VERSION_NUMBER="${UPSTREAM_VERSION#v}"
+
+                  # Check for existing open PR to avoid duplicates
+                  EXISTING_PR=$(gh pr list --search "Update CRS to ${UPSTREAM_VERSION}" --state open --json number -q '.[0].number' || echo "")
+                  if [ -n "$EXISTING_PR" ]; then
+                    echo "PR #$EXISTING_PR already exists for $UPSTREAM_VERSION, skipping"
+                    exit 0
+                  fi
+
+                  echo "UPSTREAM_VERSION=$UPSTREAM_VERSION" >> $GITHUB_ENV
+                  echo "VERSION_NUMBER=$VERSION_NUMBER" >> $GITHUB_ENV
+            - name: Update CRS rules
+              if: env.UPSTREAM_VERSION != ''
+              run: |
+                  set -euo pipefail
+
+                  # Download source tarball
+                  gh release download "$UPSTREAM_VERSION" --repo "$CRS_REPO" -A tar.gz
+
+                  # Create target directory
+                  TARGET_DIR="appsec/crs/$VERSION_NUMBER"
+                  mkdir -p "$TARGET_DIR"
+
+                  # Extract only .conf and .data files from rules/ directory
+                  tar -xzf coreruleset-*.tar.gz --wildcards --strip-components=2 \
+                    -C "$TARGET_DIR" '*/rules/*.conf' '*/rules/*.data'
+
+                  # Generate custom crs-setup.conf with version-specific values
+                  CRS_SETUP_VERSION=$(echo "$VERSION_NUMBER" | awk -F. '{printf "%d%02d%d", $1, $2, $3}')
+                  cat > "$TARGET_DIR/crs-setup.conf" << EOF
+                  SecDefaultAction "phase:1,log,auditlog,pass"
+                  SecDefaultAction "phase:2,log,auditlog,pass"
+                  SecCollectionTimeout 600
+
+                  SecAction \\
+                      "id:900990,\\
+                      phase:1,\\
+                      pass,\\
+                      t:none,\\
+                      nolog,\\
+                      tag:'OWASP_CRS',\\
+                      ver:'OWASP_CRS/$VERSION_NUMBER',\\
+                      setvar:tx.crs_setup_version=$CRS_SETUP_VERSION"
+                  EOF
+
+                  # Clean up tarball
+                  rm -f coreruleset-*.tar.gz
+
+                  # Configure git identity
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+                  # Create branch
+                  BRANCH_NAME="update-crs-$UPSTREAM_VERSION"
+                  git checkout -b "$BRANCH_NAME"
+
+                  # Update version tracking file
+                  echo -n "$UPSTREAM_VERSION" > .github/crs-version.txt
+
+                  # Stage and commit
+                  git add "$TARGET_DIR/" .github/crs-version.txt
+                  git commit -m "Add CRS $UPSTREAM_VERSION rules"
+                  git push --set-upstream origin "$BRANCH_NAME" --force-with-lease
+
+                  # Create PR
+                  gh pr create \
+                    --title "Update CRS to $UPSTREAM_VERSION" \
+                    --body "This PR adds CRS version $VERSION_NUMBER rules from upstream release $UPSTREAM_VERSION.
+
+                  **Changes:**
+                  - Added \`appsec/crs/$VERSION_NUMBER/\` with all rule files (.conf) and data files (.data) from upstream
+                  - Updated version tracker to $UPSTREAM_VERSION
+
+                  **Source:** https://github.com/$CRS_REPO/releases/tag/$UPSTREAM_VERSION"
