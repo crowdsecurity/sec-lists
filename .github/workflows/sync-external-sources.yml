@@ -40,8 +40,8 @@ jobs:
             NAME=$(jq -er ".[$i].name" "$CONFIG_FILE")
             URL=$(jq -er ".[$i].url" "$CONFIG_FILE")
             OUTPUT=$(jq -er ".[$i].output" "$CONFIG_FILE")
-            JQ_FILTER=$(jq -er ".[$i].jq_filter // empty" "$CONFIG_FILE")
-            HEADER=$(jq -er ".[$i].header // empty" "$CONFIG_FILE")
+            JQ_FILTER=$(jq -r ".[$i].jq_filter // empty" "$CONFIG_FILE")
+            HEADER=$(jq -r ".[$i].header // empty" "$CONFIG_FILE")
 
             echo "--- Processing: $NAME ---"
             echo "  URL: $URL"
