@@ -1,0 +1,34 @@
+[
+  {
+    "name": "cloudflare-ipv4",
+    "url": "https://www.cloudflare.com/ips-v4",
+    "output": "whitelists/cdn_providers/cloudflare_ips.txt"
+  },
+  {
+    "name": "cloudflare-ipv6",
+    "url": "https://www.cloudflare.com/ips-v6",
+    "output": "whitelists/cdn_providers/cloudflare_ip6s.txt"
+  },
+  {
+    "name": "quic-cloud",
+    "url": "https://www.quic.cloud/ips?ln",
+    "output": "whitelists/cdn_providers/quic_cloud_ips.txt"
+  },
+  {
+    "name": "arvan-cloud",
+    "url": "https://www.arvancloud.ir/en/ips.txt",
+    "output": "whitelists/cdn_providers/arvancloud_ips.txt"
+  },
+  {
+    "name": "aws-cloudfront-ipv4",
+    "url": "https://ip-ranges.amazonaws.com/ip-ranges.json",
+    "output": "whitelists/cdn_providers/aws_cloudfront_ipv4.txt",
+    "jq_filter": "[.prefixes[] | select(.service == \"CLOUDFRONT\") | .ip_prefix] | sort | .[]"
+  },
+  {
+    "name": "aws-cloudfront-ipv6",
+    "url": "https://ip-ranges.amazonaws.com/ip-ranges.json",
+    "output": "whitelists/cdn_providers/aws_cloudfront_ipv6.txt",
+    "jq_filter": "[.ipv6_prefixes[] | select(.service == \"CLOUDFRONT\") | .ipv6_prefix] | sort | .[]"
+  }
+]
