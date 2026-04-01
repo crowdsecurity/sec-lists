@@ -37,11 +37,11 @@ jobs:
           echo "Processing $COUNT sources..."
 
           for i in $(seq 0 $(( COUNT - 1 ))); do
-            NAME=$(jq -r ".[$i].name" "$CONFIG_FILE")
-            URL=$(jq -r ".[$i].url" "$CONFIG_FILE")
-            OUTPUT=$(jq -r ".[$i].output" "$CONFIG_FILE")
-            JQ_FILTER=$(jq -r ".[$i].jq_filter // empty" "$CONFIG_FILE")
-            HEADER=$(jq -r ".[$i].header // empty" "$CONFIG_FILE")
+            NAME=$(jq -er ".[$i].name" "$CONFIG_FILE")
+            URL=$(jq -er ".[$i].url" "$CONFIG_FILE")
+            OUTPUT=$(jq -er ".[$i].output" "$CONFIG_FILE")
+            JQ_FILTER=$(jq -er ".[$i].jq_filter // empty" "$CONFIG_FILE")
+            HEADER=$(jq -er ".[$i].header // empty" "$CONFIG_FILE")
 
             echo "--- Processing: $NAME ---"
             echo "  URL: $URL"
@@ -64,7 +64,7 @@ jobs:
             fi
 
             if [ -n "$JQ_FILTER" ]; then
-              if ! jq -r "$JQ_FILTER" "$TMPFILE" >> "$OUTFILE"; then
+              if ! jq -er "$JQ_FILTER" "$TMPFILE" >> "$OUTFILE"; then
                 echo "::warning::jq filter failed for $NAME"
                 ERRORS="$ERRORS $NAME"
                 rm -f "$TMPFILE" "$OUTFILE"
