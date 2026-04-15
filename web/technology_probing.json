@@ -209,8 +209,7 @@
 {"tag": "neos-cms-login-probing", "pattern": "/neos/login", "type": "equals"}
 {"tag": "netscaler-aaa-login-probing", "pattern": "/logon/logonpoint/tmindex.html", "type": "equals"}
 {"tag": "netscaler-console-panel-probing", "pattern": "/admin_ui/mas/ent/login.html", "type": "equals"}
-{"tag": "novnc-login-probing", "pattern": "/vnc.html", "type": "equals"}
-{"tag": "novnc-port-6080-login-probing", "pattern": "/:6080/vnc.html", "type": "equals"}
+{"tag": "novnc-login-probing", "pattern": "/vnc.html", "type": "contains"}
 {"tag": "nuxeo-platform-login-probing", "pattern": "/nuxeo/login.jsp", "type": "equals"}
 {"tag": "odoo-database-manager-discovery-probing", "pattern": "/web/database/manager", "type": "equals"}
 {"tag": "odoo-openerp-database-selector-probing", "pattern": "/web/database/selector/", "type": "equals"}
