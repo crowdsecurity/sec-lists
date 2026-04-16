@@ -1,0 +1,610 @@
+## AMPPS probing
+
+{"tag": "ampps-admin-login-panel-probing", "pattern": "/ampps-admin/index.php", "type": "equals"}
+{"tag": "ampps-login-panel-probing", "pattern": "/ampps/index.php", "type": "equals"}
+{"tag": "ampps-probing", "pattern": "/ampps/", "type": "contains"}
+
+
+## Adobe probing
+
+{"tag": "adobe-experience-manager-forms-panel-probing", "pattern": "/libs/livecycle/", "type": "contains"}
+{"tag": "adobe-experience-manager-login-panel-probing", "pattern": "/libs/granite/", "type": "contains"}
+{"tag": "adobe-experience-manager-sling-user-login-probing", "pattern": "/system/sling/", "type": "contains"}
+{"tag": "adobe-aem-crx-package-manager-probing", "pattern": "/crx/packmgr/", "type": "contains"}
+{"tag": "adobe-coldfusion-component-browser-login-panel-probing", "pattern": "/cfide/", "type": "contains"}
+
+## Akuiteo probing
+
+{"tag": "akuiteo-login-html-probing", "pattern": "/akuiteo/login.html/", "type": "equals"}
+{"tag": "akuiteo-login-probing", "pattern": "/akuiteo.collabs/login/login.html", "type": "equals"}
+
+## Apache Tomcat probing
+
+{"tag": "apache-tomcat-host-manager-login-probing", "pattern": "/host-manager/", "type": "contains"}
+{"tag": "apache-tomcat-manager-login-probing", "pattern": "/manager/html", "type": "contains"}
+
+## ArcGIS probing
+
+{"tag": "arcgis-enterprise-panel-probing", "pattern": "/portal/portalhelp/en/", "type": "equals"}
+{"tag": "arcgis-rest-services-directory-probing", "pattern": "/arcgis/rest/services", "type": "equals"}
+
+## Archibus probing
+
+{"tag": "archibus-web-central-login-probing", "pattern": "/archibus/login.axvw", "type": "equals"}
+{"tag": "archibus-web-central-sign-in-probing", "pattern": "/archibus/schema/ab-core/views/sign-in/ab-sign-in.jsp", "type": "equals"}
+
+## Axway probing
+
+{"tag": "axway-api-manager-probing", "pattern": "/api/portal/v1.4/appinfo", "type": "equals"}
+{"tag": "axway-securetransport-web-client-probing", "pattern": "/html/skin/ric/c/config/default.config.json", "type": "equals"}
+
+## Bitrix probing
+
+{"tag": "bitrix-login-panel-probing", "pattern": "/bitrix/admin/", "type": "equals"}
+{"tag": "bitrix-map-yandex-settings-probing", "pattern": "/bitrix/components/bitrix/map.yandex.view/settings/settings.php", "type": "equals"}
+
+## Calendarix probing
+
+{"tag": "calendar-admin-login-probing", "pattern": "/calendar/admin/cal_login.php", "type": "equals"}
+{"tag": "calendarix-admin-login-probing", "pattern": "/calendarix/admin/cal_login.php", "type": "equals"}
+
+## Checkmarx probing
+
+{"tag": "checkmarx-login-probing", "pattern": "/cxrestapi/help/system/version", "type": "equals"}
+{"tag": "checkmarx-openid-configuration-probing", "pattern": "/cxrestapi/auth/identity/.well-known/openid-configuration", "type": "equals"}
+{"tag": "checkmarx-webclient-login-probing", "pattern": "/cxwebclient/login.aspx", "type": "equals"}
+
+## Cisco probing
+
+{"tag": "cisco-finesse-login-probing", "pattern": "/desktop/container/", "type": "contains"}
+{"tag": "cisco-anyconnect-vpn-probing", "pattern": "/cache/sdesktop/", "type": "contains"}
+{"tag": "cisco-servicegrid-login-probing", "pattern": "/pages/sdcall/", "type": "contains"}
+{"tag": "cisco-unified-cm-console-panel-probing", "pattern": "/ccmadmin/", "type": "contains"}
+{"tag": "cisco-unity-connection-probing", "pattern": "/cuadmin/", "type": "contains"}
+{"tag": "generic-cisco", "pattern": "/ cscoe /", "type": "contains"}
+{"tag": "cisco-prime-infrastructure-probing", "pattern": "/webacs/", "type": "contains"}
+
+## Citrix / NetScaler probing
+
+{"tag": "netscaler-console-panel-probing", "pattern": "/admin_ui/mas/ent/login.html", "type": "equals"}
+{"tag": "citrix-adc-gateway-custom-login-probing", "pattern": "/logon/logonpoint/custom.html", "type": "equals"}
+{"tag": "citrix-adc-gateway-login-probing", "pattern": "/logon/logonpoint/index.html", "type": "equals"}
+{"tag": "netscaler-aaa-login-probing", "pattern": "/logon/logonpoint/tmindex.html", "type": "equals"}
+{"tag": "citrix-netscaler-probing", "pattern": "/logon/logonpoint/", "type": "contains"}
+{"tag": "citrix-probing", "pattern": "/scripts/wpnbr.dll", "type": "contains"}
+
+## Commvault probing
+
+{"tag": "commvault-web-console-probing", "pattern": "/commandcenter/login/presso.jsp", "type": "equals"}
+{"tag": "commvault-interface-probing", "pattern": "/commandcenter/restservlet/", "type": "contains"}
+{"tag": "commvault-commandcenter-api-probing", "pattern": "/commandcenter/api/", "type": "contains"}
+
+## Cvent probing
+
+{"tag": "cvent-event-rsvp-probing", "pattern": "/events/eventrsvp.aspx", "type": "equals"}
+{"tag": "cvent-gdshost-login-probing", "pattern": "/gdshost/default.aspx", "type": "equals"}
+{"tag": "cvent-login-probing", "pattern": "/manager/login.aspx", "type": "equals"}
+
+## F5 probing
+
+{"tag": "f5-bigip-welcome-login-probing", "pattern": "/tmui/tmui/login/welcome.jsp", "type": "contains"}
+{"tag": "f5-bigip-probing", "pattern": "/tmui/login.jsp", "type": "contains"}
+{"tag": "f5-big-ip-icontrol-rest-probing", "pattern": "/mgmt/shared/authn/login", "type": "equals"}
+{"tag": "f5-mgmt-shared-probing", "pattern": "/mgmt/shared/", "type": "contains"}
+{"tag": "f5-bigip-my-policy-probing", "pattern": "/my.policy", "type": "contains"}
+{"tag": "f5-probing", "pattern": "/tmui/", "type": "contains"}
+
+## Footprints probing
+
+{"tag": "footprints-service-core-entrance-page-probing", "pattern": "/mrcgi/mrentrancepage.pl", "type": "equals"}
+{"tag": "footprints-service-core-login-probing", "pattern": "/mrcgi/mrlogin.pl", "type": "equals"}
+
+## Fortinet / Forcepoint probing
+
+{"tag": "forcepoint-login-panel-probing", "pattern": "/pem/login/pages/login.jsf", "type": "equals"}
+{"tag": "fortinet-interface-probing", "pattern": "/remote/login", "type": "contains"}
+{"tag": "fortinet-fortiwlm-login-probing", "pattern": "/wlm/login", "type": "contains"}
+{"tag": "fortinet-fortisiem-panel-probing", "pattern": "/phoenix/", "type": "contains"}
+
+## Generic probing
+
+{"tag": "generic-alibaba-druid", "pattern": "/druid/index.html", "type": "equals"}
+{"tag": "generic-exchange-server", "pattern": "/autodiscover/autodiscover.json", "type": "equals"}
+{"tag": "generic-exchange-ediscovery-exporttool-probing", "pattern": "/ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application", "type": "contains"}
+{"tag": "generic-springboot-gateway-routes-probing", "pattern": "/actuator/gateway/routes", "type": "contains"}
+{"tag": "generic-springboot", "pattern": "/actuator/health", "type": "contains"}
+{"tag": "generic-dwr-scan", "pattern": "/dwr/index.html", "type": "contains"}
+{"tag": "generic-phpinfo", "pattern": "/info.php", "type": "contains"}
+
+## GoAnywhere probing
+
+{"tag": "goanywhere-web-client-login-probing", "pattern": "/webclient/login.xhtml", "type": "equals"}
+{"tag": "goanywhere-probing", "pattern": "^/goanywhere/", "type": "regex"}
+
+## Grails / H2 probing
+
+{"tag": "grails-admin-console-probing", "pattern": "/dbconsole/", "type": "equals"}
+{"tag": "grails-h2-console-probing", "pattern": "/h2-console/", "type": "equals"}
+{"tag": "h2-console-web-login-probing", "pattern": "/h2-console/login.jsp", "type": "equals"}
+
+## HP Service Manager probing
+
+{"tag": "hp-service-manager-ess-login-probing", "pattern": "/sm/ess.do", "type": "equals"}
+{"tag": "hp-service-manager-login-probing", "pattern": "/sm935/index.do", "type": "equals"}
+
+## Horde / IMP probing
+
+{"tag": "horde-login-probing", "pattern": "/horde/login.php", "type": "equals"}
+{"tag": "horde-webmail-login-probing", "pattern": "/horde/imp/login.php", "type": "equals"}
+{"tag": "imp-webmail-login-probing", "pattern": "/imp/login.php", "type": "equals"}
+
+## Hybris probing
+
+{"tag": "hybris-management-console-login-probing", "pattern": "/hmc/hybris", "type": "equals"}
+{"tag": "hybris-management-console-nested-login-probing", "pattern": "/hybris/hmc/hybris", "type": "equals"}
+
+## IBM probing
+
+{"tag": "ibm-decision-center-enterprise-console-panel-probing", "pattern": "/teamserver/faces/", "type": "contains"}
+{"tag": "ibm-operational-decision-manager-probing", "pattern": "/decisioncenter/", "type": "contains"}
+{"tag": "ibm-openadmin-tool-panel-probing", "pattern": "/openadmin/", "type": "contains"}
+{"tag": "ibm-maximo-login-probing", "pattern": "/maximo/", "type": "contains"}
+{"tag": "ibm-mq-web-console-login-probing", "pattern": "/ibmmq/", "type": "contains"}
+{"tag": "ibm-websphere-portal-login-probing", "pattern": "/wps/", "type": "contains"}
+
+## IPdiva probing
+
+{"tag": "ipdiva-mediation-authenticate-probing", "pattern": "/mediation/authenticate", "type": "equals"}
+{"tag": "ipdiva-mediation-login-probing", "pattern": "/mediation/domains", "type": "equals"}
+
+## Ivanti / Pulse Secure / MobileIron probing
+
+{"tag": "pulse-secure-vpn-login-probing", "pattern": "/dana-na/auth/url_default/welcome.cgi", "type": "equals"}
+{"tag": "pulse-secure-vpn-url-2-login-probing", "pattern": "/dana-na/auth/url_2/welcome.cgi", "type": "equals"}
+{"tag": "pulse-secure-vpn-url-3-login-probing", "pattern": "/dana-na/auth/url_3/welcome.cgi", "type": "equals"}
+{"tag": "pulse-connect-secure-probing2", "pattern": "/dana-na/auth/", "type": "contains"}
+{"tag": "ivanti-connect-secure-totp-probing", "pattern": "/api/v1/totp/", "type": "contains"}
+{"tag": "pulse-secure-hostchecker-installer-probing", "pattern": "/dana-cached/hc/hostcheckerinstaller.osx", "type": "equals"}
+{"tag": "pulse-connect-secure-probing3", "pattern": "/dana-cached/", "type": "contains"}
+{"tag": "ivanti-connect-secure-cav-probing", "pattern": "/api/v1/cav/", "type": "contains"}
+{"tag": "pulse-secure-version-probing", "pattern": "/dana-na/nc/nc_gina_ver.txt", "type": "equals"}
+{"tag": "pulse-connect-secure-probing1", "pattern": "/dana-na/nc/", "type": "contains"}
+{"tag": "ivanti-traffic-manager-probing", "pattern": "/apps/zxtm/", "type": "contains"}
+{"tag": "ivanti-connect-secure-probing", "pattern": "/dana-na/", "type": "contains"}
+{"tag": "ivanti-connect-secure-dana-probing", "pattern": "/dana/", "type": "contains"}
+{"tag": "mobileiron-sentry-probing", "pattern": "/mics/login.jsp", "type": "equals"}
+{"tag": "ivanti-mobileiron-mics-probing", "pattern": "/mics/", "type": "contains"}
+{"tag": "mobileiron-android-enrollment-probing", "pattern": "/mifs/c/d/android.html", "type": "equals"}
+{"tag": "mobileiron-login-probing", "pattern": "/mifs/login.jsp", "type": "equals"}
+{"tag": "mobileiron-user-login-probing", "pattern": "/mifs/user/login.jsp", "type": "equals"}
+{"tag": "ivanti-mobileiron-probing", "pattern": "/mifs/", "type": "contains"}
+
+## JBoss probing
+
+{"tag": "jboss-jbpm-administration-console-login-probing", "pattern": "/jbpm-console/app/tasks.jsf", "type": "equals"}
+{"tag": "jboss-jmx-management-console-login-probing", "pattern": "/jmx-console/", "type": "equals"}
+{"tag": "jboss-ws-juddi-console-probing", "pattern": "/juddi/", "type": "equals"}
+
+## KFM probing
+
+{"tag": "kae-s-file-manager-admin-login-probing", "pattern": "/kfm/admin/", "type": "equals"}
+{"tag": "kae-s-file-manager-login-probing", "pattern": "/kfm/index.php", "type": "equals"}
+
+## Kronos probing
+
+{"tag": "kronos-workforce-central-login-probing", "pattern": "/wfc/portal", "type": "equals"}
+{"tag": "kronos-workforce-central-logon-probing", "pattern": "/wfc/logon", "type": "equals"}
+
+## LDAP Account Manager probing
+
+{"tag": "ldap-account-manager-lam-login-probing", "pattern": "/lam/templates/login.php", "type": "equals"}
+{"tag": "ldap-account-manager-login-probing", "pattern": "/templates/login.php", "type": "equals"}
+
+## LabKey probing
+
+{"tag": "labkey-server-alt-login-view-probing", "pattern": "/login/home/login.view", "type": "equals"}
+{"tag": "labkey-server-login-probing", "pattern": "/labkey/home/login-login.view", "type": "equals"}
+
+## Liferay probing
+
+{"tag": "liferay-jsonws-invoke-probing", "pattern": "/api/jsonws/invoke", "type": "equals"}
+{"tag": "liferay-login-probing", "pattern": "/api/jsonws", "type": "equals"}
+
+## Lucee probing
+
+{"tag": "lucee-server-admin-login-probing", "pattern": "/lucee/admin/server.cfm", "type": "equals"}
+{"tag": "lucee-web-and-lucee-server-admin-login-probing", "pattern": "/lucee/admin/web.cfm", "type": "equals"}
+
+## Micro Focus probing
+
+{"tag": "micro-focus-enterprise-server-login-server-probing", "pattern": "/_login_server_", "type": "equals"}
+{"tag": "micro-focus-enterprise-server-nds-probing", "pattern": "/nds", "type": "equals"}
+{"tag": "micro-focus-enterprise-server-admin-probing", "pattern": "/nps/servlet/", "type": "contains"}
+{"tag": "micro-focus-application-lifecycle-management-panel-probing", "pattern": "/qcbin/", "type": "contains"}
+{"tag": "micro-focus-filr-login-probing", "pattern": "/filr/", "type": "contains"}
+{"tag": "micro-focus-vibe-login-probing", "pattern": "/ssf/", "type": "contains"}
+
+## Microsoft Exchange probing
+
+{"tag": "microsoft-exchange-web-service-probing", "pattern": "/ews/exchange.asmx", "type": "equals"}
+{"tag": "microsoft-exchange-ews-probing", "pattern": "/ews/", "type": "contains"}
+{"tag": "microsoft-exchange-admin-center-login-probing", "pattern": "/owa/auth/logon.aspx", "type": "equals"}
+{"tag": "microsoft-exchange-service-svc-probing", "pattern": "/owa/service.svc", "type": "equals"}
+{"tag": "microsoft-exchange-probing", "pattern": "/owa/", "type": "contains"}
+
+## Mitel probing
+
+{"tag": "mitel-login-probing", "pattern": "/server-common/cgi-bin/login", "type": "equals"}
+{"tag": "mitel-nupoint-unified-messaging-probing", "pattern": "/npm-admin/showloginpage.do", "type": "equals"}
+
+## Mitric probing
+
+{"tag": "mitric-checker-login-probing", "pattern": "/qsa/login.aspx", "type": "equals"}
+{"tag": "mitric-checker-privacy-api-probing", "pattern": "/api/external/getprivacy", "type": "equals"}
+
+## Movable Type probing
+
+{"tag": "movable-type-mt-cgi-probing", "pattern": "/mt.cgi", "type": "equals"}
+{"tag": "movable-type-pro-login-probing", "pattern": "/mt/admin", "type": "equals"}
+
+## MyLittle probing
+
+{"tag": "mylittleadmin-login-probing", "pattern": "/mylittleadmin/", "type": "equals"}
+{"tag": "mylittlebackup-full-path-probing", "pattern": "/mylittlebackup/", "type": "equals"}
+{"tag": "mylittlebackup-probing", "pattern": "/mlb/", "type": "equals"}
+
+## Odoo probing
+
+{"tag": "odoo-database-manager-discovery-probing", "pattern": "/web/database/manager", "type": "equals"}
+{"tag": "odoo-openerp-database-selector-probing", "pattern": "/web/database/selector/", "type": "equals"}
+{"tag": "odoo-probing", "pattern": "/web/login", "type": "equals"}
+
+## Office Web Apps probing
+
+{"tag": "office-web-apps-server-probing", "pattern": "/op/generate.aspx", "type": "equals"}
+{"tag": "office-web-apps-wrongfiletype-probing", "pattern": "/op/wrongfiletype.htm", "type": "equals"}
+
+## OpenTouch probing
+
+{"tag": "opentouch-multimedia-services-logonweb-probing", "pattern": "/authenticationform/jsp/logonweb.jsp", "type": "equals"}
+{"tag": "opentouch-multimedia-services-probing", "pattern": "/authenticationform/login", "type": "equals"}
+
+## Oracle probing
+
+{"tag": "oracle-weblogic-login-probing", "pattern": "/console/login/", "type": "contains"}
+{"tag": "oracle-weblogic-uddi-explorer-probing", "pattern": "/uddiexplorer/", "type": "contains"}
+{"tag": "oracle-application-server-probing", "pattern": "/em/console/ias/oc4j/home", "type": "equals"}
+{"tag": "oracle-enterprise-manager-login-probing", "pattern": "/em/console/logon/logon", "type": "equals"}
+{"tag": "oracle-enterprise-manager-probing", "pattern": "/em/console/", "type": "contains"}
+{"tag": "oracle-opera-login-probing", "pattern": "/operalogin/", "type": "contains"}
+{"tag": "oracle-e-business-suite-login-probing", "pattern": "/oa_html/", "type": "contains"}
+{"tag": "oracle-business-intelligence-login-probing", "pattern": "/saw.dll", "type": "contains"}
+{"tag": "oracle-integrated-lights-out-manager-login-probing", "pattern": "/ipages/", "type": "contains"}
+{"tag": "oracle-access-management-login-probing", "pattern": "/oam/", "type": "contains"}
+{"tag": "oracle-commerce-business-control-center-login-probing", "pattern": "/atg/", "type": "contains"}
+
+## Palo Alto probing
+
+{"tag": "palo-alto-networks-sslmgr-probing", "pattern": "/sslmgr", "type": "equals"}
+{"tag": "palo-alto-networks-globalprotect-login-probing", "pattern": "/global-protect/", "type": "contains"}
+
+## QmailAdmin probing
+
+{"tag": "qmailadmin-cgi-bin-probing", "pattern": "/cgi-bin/qmailadmin", "type": "equals"}
+{"tag": "qmailadmin-cgi-login-probing", "pattern": "/cgi-bin/qmailadmin/qmailadmin", "type": "equals"}
+{"tag": "qmailadmin-cgi-ssl-login-probing", "pattern": "/cgi-ssl/qmailadmin/qmailadmin", "type": "equals"}
+{"tag": "qmailadmin-login-probing", "pattern": "/qmailadmin/qmailadmin.cgi", "type": "equals"}
+
+## RD Web Access probing
+
+{"tag": "rd-web-access-probing", "pattern": "/rdweb/", "type": "equals"}
+{"tag": "rdweb-remoteapp-and-desktop-connections-web-access-probing", "pattern": "/rdweb/pages/en-us/login.aspx", "type": "equals"}
+
+## Remedy probing
+
+{"tag": "remedy-axis-login-probing", "pattern": "/arsys/shared/login.jsp", "type": "equals"}
+{"tag": "remedy-rsso-admin-probing", "pattern": "/rsso/admin/", "type": "equals"}
+
+## Reportico probing
+
+{"tag": "reportico-administration-page-probing", "pattern": "/run.php", "type": "equals"}
+{"tag": "reportico-run-php-probing", "pattern": "/reportico/run.php", "type": "equals"}
+
+## Roxy File Manager probing
+
+{"tag": "roxy-file-manager-aspnet-main-probing", "pattern": "/fileman/asp_net/main.ashx", "type": "equals"}
+{"tag": "roxy-file-manager-php-fileslist-probing", "pattern": "/fileman/php/fileslist.php", "type": "equals"}
+{"tag": "roxy-file-manager-probing", "pattern": "/fileman/index.html", "type": "equals"}
+
+## SAP probing
+
+{"tag": "sap-fiori-login-probing", "pattern": "/fiori", "type": "equals"}
+{"tag": "sap-nwa-probing", "pattern": "/nwa", "type": "equals"}
+{"tag": "sap-successfactors-login-probing", "pattern": "/sf/start", "type": "equals"}
+{"tag": "sap-webdynpro-dispatcher-probing", "pattern": "/webdynpro/dispatcher/", "type": "contains"}
+{"tag": "sap-netweaver-composition-environment-tools-probing", "pattern": "/rep/start/", "type": "contains"}
+{"tag": "sap-fiori-portal-login-probing", "pattern": "/irj/portal/fiori", "type": "equals"}
+{"tag": "sap-netweaver-portal-probing", "pattern": "/irj/portal", "type": "equals"}
+{"tag": "sap-irj-probing", "pattern": "/irj/", "type": "contains"}
+{"tag": "fiori-launchpad-login-probing", "pattern": "/sap/bc/ui5_ui5/ui2/ushell/shells/abap/fiorilaunchpad.html", "type": "equals"}
+{"tag": "sap-hana-xs-engine-admin-login-probing", "pattern": "/sap/hana/xs/formlogin/login.html", "type": "equals"}
+{"tag": "sap-probing", "pattern": "/sap/", "type": "contains"}
+
+## Samsung probing
+
+{"tag": "samsung-magicinfo-probing", "pattern": "/magicinfo/login", "type": "equals"}
+{"tag": "samsung-printer-probing", "pattern": "/sws/index.html", "type": "equals"}
+
+## SecurEnvoy probing
+
+{"tag": "securenvoy-enrollment-probing", "pattern": "/secenrol/", "type": "equals"}
+{"tag": "securenvoy-login-probing", "pattern": "/secadmin/", "type": "equals"}
+{"tag": "securenvoy-portal-probing", "pattern": "/securenvoy/", "type": "equals"}
+{"tag": "securenvoy-rdweb-probing", "pattern": "/rdweb", "type": "equals"}
+
+## SeedDMS probing
+
+{"tag": "seeddms-dms-login-probing", "pattern": "/dms/out/out.login.php", "type": "equals"}
+{"tag": "seeddms-login-probing", "pattern": "/out/out.login.php", "type": "equals"}
+
+## Sitecore probing
+
+{"tag": "sitecore-probing", "pattern": "/sitecore.version.xml", "type": "contains"}
+{"tag": "sitecore-admin-login-probing", "pattern": "/sitecore/admin/", "type": "contains"}
+{"tag": "sitecore-login-probing", "pattern": "/sitecore/login/", "type": "contains"}
+
+## SolarWinds probing
+
+{"tag": "solarwinds-generic-probing", "pattern": "/services/messagebroker/", "type": "contains"}
+{"tag": "solarwinds-helpdesk-probing", "pattern": "/helpdesk/webobjects/", "type": "contains"}
+{"tag": "solarwinds-informationservice-probing", "pattern": "/informationservice/", "type": "contains"}
+{"tag": "solarwinds-platform-probing", "pattern": "/solarwinds/", "type": "contains"}
+{"tag": "solarwinds-orion-login-probing", "pattern": "/orion/login.aspx", "type": "equals"}
+{"tag": "solarwinds-orion-probing", "pattern": "/orion/", "type": "contains"}
+
+## Somansa probing
+
+{"tag": "somansa-dlp-favicon-probing", "pattern": "/dlpcenter/images/favicon.ico", "type": "equals"}
+{"tag": "somansa-dlp-login-probing", "pattern": "/dlpcenter/loginform.sms", "type": "equals"}
+
+## SonicWall probing
+
+{"tag": "sonicwall-network-security-login-probing", "pattern": "/sonicui/", "type": "contains"}
+{"tag": "sonicwall-analyzer-login-probing", "pattern": "/sgms/", "type": "contains"}
+
+## Sphider probing
+
+{"tag": "search-admin-admin-php-probing", "pattern": "/search/admin/admin.php", "type": "equals"}
+{"tag": "sphider-admin-admin-php-probing", "pattern": "/sphider/admin/admin.php", "type": "equals"}
+{"tag": "sphider-admin-login-probing", "pattern": "/admin/spider.php", "type": "equals"}
+
+## SqWebMail probing
+
+{"tag": "sqwebmail-cgi-bin-webmail-probing", "pattern": "/cgi-bin/webmail", "type": "equals"}
+{"tag": "sqwebmail-login-probing", "pattern": "/cgi-bin/sqwebmail", "type": "equals"}
+
+## Strapi probing
+
+{"tag": "strapi-login-probing", "pattern": "/admin/auth/login", "type": "equals"}
+{"tag": "strapi-users-permissions-login-probing", "pattern": "/admin/plugins/users-permissions/auth/login", "type": "equals"}
+
+## Symantec probing
+
+{"tag": "symantec-data-loss-prevention-login-probing", "pattern": "/protectmanager/logon", "type": "equals"}
+{"tag": "symantec-encryption-server-login-probing", "pattern": "/b/l.e", "type": "equals"}
+{"tag": "symantec-identity-manager-management-console-probing", "pattern": "/iam/immanage/login.jsp", "type": "equals"}
+{"tag": "symantec-pgp-global-directory-probing", "pattern": "/vkd/getwelcomescreen.event", "type": "equals"}
+
+## TIBCO probing
+
+{"tag": "tibco-jasperserver-pro-login-probing", "pattern": "/jasperserver-pro/login.html", "type": "equals"}
+{"tag": "tibco-jaspersoft-login-probing", "pattern": "/jasperserver/login.html", "type": "equals"}
+{"tag": "tibco-managed-file-transfer-generic-login-probing", "pattern": "/login/login.jsp", "type": "equals"}
+{"tag": "tibco-managed-file-transfer-panel-probing", "pattern": "/cfcc/login/login.jsp", "type": "equals"}
+{"tag": "tibco-spotfire-login-probing", "pattern": "/spotfire/login.html", "type": "equals"}
+
+## Totemomail probing
+
+{"tag": "totemomail-folder-view-probing", "pattern": "/responsiveui/webmail/folder.xhtml", "type": "equals"}
+{"tag": "totemomail-login-probing", "pattern": "/responsiveui/", "type": "equals"}
+
+## Umbraco probing
+
+{"tag": "umbraco-login-page-probing", "pattern": "/umbraco/login", "type": "equals"}
+{"tag": "umbraco-login-probing", "pattern": "/umbraco", "type": "equals"}
+
+## VMware probing
+
+{"tag": "vmware-hcx-login-probing", "pattern": "/hybridity/", "type": "contains"}
+{"tag": "vmware-workspace-one-uem-airwatch-login-probing", "pattern": "/airwatch/", "type": "contains"}
+
+## Versa probing
+
+{"tag": "versa-director-login-probing", "pattern": "/versa/login", "type": "equals"}
+{"tag": "versa-sd-wan-login-probing", "pattern": "/versa/login.html", "type": "equals"}
+
+## Wallix probing
+
+{"tag": "wallix-access-manager-favicon-probing", "pattern": "/wabam/favicon.ico", "type": "equals"}
+{"tag": "wallix-access-manager-probing", "pattern": "/wabam", "type": "equals"}
+
+## Woodwing probing
+
+{"tag": "woodwing-studio-server-alt-login-probing", "pattern": "/server/apps/login.php", "type": "equals"}
+{"tag": "woodwing-studio-server-probing", "pattern": "/studioserver/server/apps/login.php", "type": "equals"}
+
+## XXL-Job probing
+
+{"tag": "xxljob-admin-login-probing", "pattern": "/xxl-job-admin/tologin", "type": "equals"}
+{"tag": "xxljob-tologin-probing", "pattern": "/tologin", "type": "equals"}
+
+## Zoho ManageEngine probing
+
+{"tag": "zoho-manageengine-adselfservice-plus-probing", "pattern": "/authorization.do", "type": "equals"}
+{"tag": "zoho-manageengine-adselfservice-version-probing", "pattern": "/servlet/getproductversion", "type": "equals"}
+{"tag": "zoho-manageengine-analytics-plus-probing", "pattern": "/iam/login", "type": "equals"}
+{"tag": "zoho-manageengine-exchange-reporter-plus-probing", "pattern": "/exchange/index.html", "type": "equals"}
+{"tag": "zoho-manageengine-keymanagerplus-favicon-probing", "pattern": "/pki/images/keymanager_title.ico", "type": "equals"}
+{"tag": "zoho-manageengine-keymanagerplus-probing", "pattern": "/apiclient/index.jsp", "type": "equals"}
+{"tag": "zoho-manageengine-network-configuration-manager-probing", "pattern": "/apiclient/ember/login.jsp", "type": "equals"}
+
+## oVirt probing
+
+{"tag": "open-virtualization-userportal-webadmin-panel-probing", "pattern": "/ovirt-engine/userportal/", "type": "equals"}
+{"tag": "ovirt-webadmin-panel-probing", "pattern": "/ovirt-engine/webadmin/", "type": "equals"}
+
+{"tag": "acti-video-monitoring-panel-probing", "pattern": "/cgi-bin/videoconfiguration.cgi", "type": "equals"}
+{"tag": "adfinity-login-probing", "pattern": "/adfinity/login", "type": "equals"}
+{"tag": "akamai-cloudtest-panel-probing", "pattern": "/concerto/login", "type": "equals"}
+{"tag": "alfresco-cms-probing", "pattern": "/alfresco/api/-default-/public/cmis/versions/1.1/atom", "type": "equals"}
+{"tag": "alienvault-usm-login-panel-probing", "pattern": "/ossim/session/login.php", "type": "equals"}
+{"tag": "anaqua-login-panel-probing", "pattern": "/anaqua/public/login.aspx", "type": "equals"}
+{"tag": "apache-airflow-admin-login-panel-probing", "pattern": "/airflow/", "type": "contains"}
+{"tag": "apache-solr-admin-probing", "pattern": "/solr/", "type": "contains"}
+{"tag": "apiman-login-panel-probing", "pattern": "/apimanui/api-manager", "type": "equals"}
+{"tag": "appsuite-login-probing", "pattern": "/appsuite/", "type": "equals"}
+{"tag": "arangodb-web-interface-probing", "pattern": "/_db/_system/_admin/aardvark/index.html", "type": "equals"}
+{"tag": "avatier-password-management-panel-probing", "pattern": "/aims/ps/", "type": "equals"}
+{"tag": "boltcms-login-probing", "pattern": "/bolt/login", "type": "equals"}
+{"tag": "bonita-portal-login-probing", "pattern": "/bonita/login.jsp", "type": "equals"}
+{"tag": "cacti-login-probing", "pattern": "/cacti/", "type": "equals"}
+{"tag": "cas-login-probing", "pattern": "/cas/login", "type": "equals"}
+{"tag": "cassia-bluetooth-gateway-probing", "pattern": "/cassia/login", "type": "equals"}
+{"tag": "caucho-resin-information-disclosure", "pattern": "/ ../web-inf/", "type": "contains"}
+{"tag": "centreon-login-probing", "pattern": "/centreon/index.php", "type": "equals"}
+{"tag": "chamilo-sqli", "pattern": "/main/inc/ajax/extra_field.ajax.php?a=search_options_from_tags", "type": "contains"}
+{"tag": "chronos-probing", "pattern": "/chronos.wsc/asparamlogin.html", "type": "equals"}
+{"tag": "claris-filemaker-webdirect-probing", "pattern": "/fmi/webd/", "type": "equals"}
+{"tag": "clearpass-policy-manager-login-probing", "pattern": "/tips/tipslogin.action", "type": "equals"}
+{"tag": "contao-login-probing", "pattern": "/contao/login", "type": "equals"}
+{"tag": "content-central-login-probing", "pattern": "/contentcentral/login.aspx/", "type": "equals"}
+{"tag": "contentkeeper-cloud-probing", "pattern": "/cgi-bin/ck/domenu.cgi", "type": "equals"}
+{"tag": "covenant-c2-probing", "pattern": "/covenantuser/login", "type": "equals"}
+{"tag": "creatio-login-probing", "pattern": "/login/nuilogin.aspx", "type": "equals"}
+{"tag": "cx-cloud-probing", "pattern": "/cxcum/", "type": "equals"}
+{"tag": "dell-wyse-management-suite-login-probing", "pattern": "/ccm-web/", "type": "equals"}
+{"tag": "delta-controls-admin-login-probing", "pattern": "/deltaweb/hmi_login.asp", "type": "equals"}
+{"tag": "dex-authentication-panel-probing", "pattern": "/dex/auth", "type": "equals"}
+{"tag": "docuware-probing", "pattern": "/docuware/identity/account/login", "type": "equals"}
+{"tag": "dotadmin-login-probing", "pattern": "/dotadmin/", "type": "equals"}
+{"tag": "dotclear-admin-login-probing", "pattern": "/dc2/admin/auth.php", "type": "equals"}
+{"tag": "druid-monitor-login-probing", "pattern": "/druid/login.html", "type": "equals"}
+{"tag": "dxplanning-probing", "pattern": "/dxplanning/webbooking/version", "type": "equals"}
+{"tag": "ecology-filedownloadforout-sqli", "pattern": "/weaver/weaver.file.filedownloadforoutdoc", "type": "contains"}
+{"tag": "employee-management-sqli", "pattern": "/process/aprocess.php", "type": "contains"}
+{"tag": "ems-login-probing", "pattern": "/emswebclient/login.aspx", "type": "equals"}
+{"tag": "episerver-login-panel-probing", "pattern": "/episerver/cms", "type": "equals"}
+{"tag": "epson-device-unauthorized-access-probing", "pattern": "/presentation/epsonconnect", "type": "equals"}
+{"tag": "erensoft-sqli", "pattern": "/videoseyret.php", "type": "contains"}
+{"tag": "eset-protect-login-probing", "pattern": "/era/webconsole/", "type": "equals"}
+{"tag": "ewm-manager-login-probing", "pattern": "/wfc/", "type": "equals"}
+{"tag": "fatpipe-ipvpn-probing", "pattern": "/fpui/jsp/login.jsp", "type": "equals"}
+{"tag": "freeipa-identity-management-login-probing", "pattern": "/ipa/ui/", "type": "equals"}
+{"tag": "fuel-cms-login-probing", "pattern": "/fuel/login", "type": "equals"}
+{"tag": "gespage-login-probing", "pattern": "/gespage/webapp/login.xhtml", "type": "equals"}
+{"tag": "glpi-probing", "pattern": "/glpi/", "type": "equals"}
+{"tag": "gocd-login-probing", "pattern": "/go/auth/login", "type": "equals"}
+{"tag": "hivemanager-login-probing", "pattern": "/hm/login.action", "type": "equals"}
+{"tag": "iclock-automatic-data-master-server-admin-probing", "pattern": "/iclock/accounts/login/", "type": "equals"}
+{"tag": "ilias-login-probing", "pattern": "/ilias/login.php", "type": "equals"}
+{"tag": "infinitt-pacs-file-upload", "pattern": "/webservices/webjobupload.asmx", "type": "contains"}
+{"tag": "iomega-lenovoemc-nas-login-probing", "pattern": "/cp/shares", "type": "equals"}
+{"tag": "iptime-router-login-probing", "pattern": "/sess-bin/login_session.cgi", "type": "equals"}
+{"tag": "jalios-jcms-login-probing", "pattern": "/front/privatelogin.jsp", "type": "equals"}
+{"tag": "jira-service-desk-login-probing", "pattern": "/servicedesk/customer/", "type": "contains"}
+{"tag": "kenesto-login-probing", "pattern": "/kenesto/account/logon", "type": "equals"}
+{"tag": "kentico-login-probing", "pattern": "/cmspages/logon.aspx", "type": "equals"}
+{"tag": "kiali-probing", "pattern": "/kiali/", "type": "contains"}
+{"tag": "kibana-login-probing", "pattern": "/app/kibana", "type": "equals"}
+{"tag": "kubernetes-local-cluster-web-view-probing", "pattern": "/clusters/local", "type": "equals"}
+{"tag": "labtech-web-portal-login-probing", "pattern": "/wcc2/", "type": "equals"}
+{"tag": "live-helper-chat-admin-login-probing", "pattern": "/site_admin/user/login", "type": "equals"}
+{"tag": "luci-login-probing", "pattern": "/cgi-bin/luci", "type": "equals"}
+{"tag": "maestro-listserv-probing", "pattern": "/lui/", "type": "equals"}
+{"tag": "magnolia-cms-login-probing", "pattern": "/.magnolia/admincentral", "type": "equals"}
+{"tag": "magnusbilling-login-panel-probing", "pattern": "/mbilling/", "type": "equals"}
+{"tag": "mailwatch-login-probing", "pattern": "/mailscanner/login.php", "type": "equals"}
+{"tag": "matomo-probing", "pattern": "/plugins/corehome/images/favicon.png", "type": "equals"}
+{"tag": "metasploit-setup-and-configuration-page-probing", "pattern": "/users/new", "type": "equals"}
+{"tag": "minio-browser-login-probing", "pattern": "/minio/login", "type": "equals"}
+{"tag": "monitorix-probing", "pattern": "/monitorix-cgi/monitorix.cgi", "type": "equals"}
+{"tag": "nagios-xi-login-probing", "pattern": "/nagiosxi/login.php", "type": "equals"}
+{"tag": "nagvis-login-probing", "pattern": "/nagvis/frontend/nagvis-js/index.php", "type": "equals"}
+{"tag": "neos-cms-login-probing", "pattern": "/neos/login", "type": "equals"}
+{"tag": "novnc-login-probing", "pattern": "/vnc.html", "type": "contains"}
+{"tag": "nuxeo-platform-login-probing", "pattern": "/nuxeo/login.jsp", "type": "equals"}
+{"tag": "okiok-s-filer-portal-login-probing", "pattern": "/sfiler/login.action", "type": "equals"}
+{"tag": "opencats-login-probing", "pattern": "/opencats/", "type": "equals"}
+{"tag": "opencpu-probing", "pattern": "/ocpu/", "type": "equals"}
+{"tag": "opennms-web-console-login-probing", "pattern": "/opennms/login.jsp", "type": "equals"}
+{"tag": "opensign-login-probing", "pattern": "/locales/en/translation.json", "type": "equals"}
+{"tag": "opensis-login-probing", "pattern": "/opensis/index.php", "type": "equals"}
+{"tag": "opentwrt-login-configuration-interface-probing", "pattern": "/cgi-bin/luci/", "type": "equals"}
+{"tag": "openvpn-monitor-probing", "pattern": "/openvpn-monitor/", "type": "equals"}
+{"tag": "opinio-login-probing", "pattern": "/admin/folder.do", "type": "equals"}
+{"tag": "otobo-login-probing", "pattern": "/otobo/index.pl", "type": "equals"}
+{"tag": "outsystems-service-center-login-probing", "pattern": "/servicecenter/login.aspx", "type": "equals"}
+{"tag": "pagespeed-global-admin-probing", "pattern": "/pagespeed-global-admin/", "type": "equals"}
+{"tag": "pandora-fms-mobile-console-login-probing", "pattern": "/pandora_console/mobile/", "type": "equals"}
+{"tag": "parallels-html5-client-login-probing", "pattern": "/rashtml5gateway/", "type": "equals"}
+{"tag": "pega-infinity-login-probing", "pattern": "/prweb/prauth/app/default/", "type": "equals"}
+{"tag": "pentaho-user-console-login-probing", "pattern": "/pentaho/login", "type": "equals"}
+{"tag": "peplink-login-probing", "pattern": "/cgi-bin/manga/index.cgi", "type": "equals"}
+{"tag": "photoprism-probing", "pattern": "/library/login", "type": "equals"}
+{"tag": "php-ldap-admin-probing", "pattern": "/phpldapadmin", "type": "equals"}
+{"tag": "polarion-siemens-login-panel-probing", "pattern": "/polarion/", "type": "equals"}
+{"tag": "processwire-login-probing", "pattern": "/processwire/", "type": "equals"}
+{"tag": "proofpoint-protection-server-probing", "pattern": "/euweb/login", "type": "equals"}
+{"tag": "qlikview-accesspoint-login-probing", "pattern": "/qlikview/formlogin.htm", "type": "equals"}
+{"tag": "quest-modem-configuration-login-panel-probing", "pattern": "/cgi-bin/webcm", "type": "equals"}
+{"tag": "realor-gwt-system-sqli", "pattern": "/agentboard.xgi", "type": "contains"}
+{"tag": "residential-gateway-login-probing", "pattern": "/cgi-bin/wwwctrl.cgi", "type": "equals"}
+{"tag": "ricoh-web-image-monitor-probing", "pattern": "/web/guest/en/websys/webarch/header.cgi", "type": "equals"}
+{"tag": "royal-event-management-system-admin-probing", "pattern": "/royal_event/", "type": "equals"}
+{"tag": "rsa-self-service-login-probing", "pattern": "/console-selfservice/selfservice.do", "type": "equals"}
+{"tag": "safenet-authentication-login-probing", "pattern": "/selfenrollment/enrollment.aspx", "type": "equals"}
+{"tag": "secmail-login-probing", "pattern": "/secmail/login.jsp", "type": "equals"}
+{"tag": "secure-login-service-login-probing", "pattern": "/login/sls/auth", "type": "equals"}
+{"tag": "selfcheck-system-manager-panel-probing", "pattern": "/systemmanager/account/signin", "type": "equals"}
+{"tag": "sicom-mgrng-administrative-login-found-probing", "pattern": "/~sicom/mgrng/loginform.php", "type": "equals"}
+{"tag": "sitefinity-login-probing", "pattern": "/sitefinity/authenticate/swt", "type": "equals"}
+{"tag": "slocum-fleet-mission-control-login-probing", "pattern": "/sfmc/login", "type": "equals"}
+{"tag": "sphinxonline-probing", "pattern": "/sphinxauth/account/login", "type": "equals"}
+{"tag": "sql-buddy-login-probing", "pattern": "/sqlbuddy/", "type": "equals"}
+{"tag": "sunbird-dcim-probing", "pattern": "/dcim/", "type": "equals"}
+{"tag": "syfadis-xperience-login-probing", "pattern": "/directory/login/login.aspx", "type": "equals"}
+{"tag": "synapse-mobility-login-probing", "pattern": "/pureweb/server/login.jsp", "type": "equals"}
+{"tag": "syncthru-web-service-probing", "pattern": "/sws/index.sws", "type": "equals"}
+{"tag": "synnefo-admin-login-probing", "pattern": "/synnefoclient/", "type": "equals"}
+{"tag": "teleport-login-probing", "pattern": "/webapi/ping", "type": "equals"}
+{"tag": "tenemos-t24-login-probing", "pattern": "/servlet/browserservlet", "type": "equals"}
+{"tag": "trend-micro-apex-one-login-probing", "pattern": "/officescan/", "type": "contains"}
+{"tag": "typo3-login-probing", "pattern": "/typo3/", "type": "equals"}
+{"tag": "usergate-ngfw-utm-admin-probing", "pattern": "/static/console-utm-webui/js/preinit.js", "type": "equals"}
+{"tag": "veeam-server-info-probing", "pattern": "/api/v1/serverinfo", "type": "contains"}
+{"tag": "veracore-login-probing", "pattern": "/veracore/home/", "type": "equals"}
+{"tag": "veritas-netbackup-opscenter-analytics-login-probing", "pattern": "/opscenter/", "type": "equals"}
+{"tag": "virtual-ems-login-probing", "pattern": "/virtualems/login.aspx", "type": "equals"}
+{"tag": "vue-pacs-panel-probing", "pattern": "/portal/weblogin.aspx", "type": "equals"}
+{"tag": "wago-plc-probing", "pattern": "/plc/webvisu.htm", "type": "equals"}
+{"tag": "watcher-probing", "pattern": "/vsaas/v2/login", "type": "equals"}
+{"tag": "wazuh-login-panel-probing", "pattern": "/app/login", "type": "equals"}
+{"tag": "web-transfer-client-login-probing", "pattern": "/thinclient/wtm/public/index.html", "type": "equals"}
+{"tag": "webalizer-probing", "pattern": "/webalizer/", "type": "equals"}
+{"tag": "webmin-admin-login-probing", "pattern": "/webmin/", "type": "equals"}
+{"tag": "webmodule-login-probing", "pattern": "/webmodule-ee/login.seam", "type": "equals"}
+{"tag": "webshell4-login-probing", "pattern": "/webshell4/login.php", "type": "equals"}
+{"tag": "wowza-streaming-engine-manager-probing", "pattern": "/enginemanager/ftu/welcome.htm", "type": "equals"}
+{"tag": "wso2-management-console-login-probing", "pattern": "/carbon/admin/login.jsp", "type": "equals"}
+{"tag": "xenmobile-console-login-probing", "pattern": "/zdm/login_xdm_uc.jsp", "type": "equals"}
+{"tag": "xiaomi-wireless-router-admin-probing", "pattern": "/cgi-bin/luci/web", "type": "equals"}
+{"tag": "xphone-connect-admin-interface-probing", "pattern": "/xphoneconnect/admin/login.aspx", "type": "equals"}
+{"tag": "xweb500-login-probing", "pattern": "/cgi-bin/xweb500.cgi", "type": "equals"}
+{"tag": "yonyou-u8-crm-sqli", "pattern": "/config/fillbacksettingedit.php", "type": "contains"}
+{"tag": "yunohost-admin-probing", "pattern": "/yunohost/admin", "type": "equals"}
+{"tag": "yzmcms-login-probing", "pattern": "/admin/index/login.html", "type": "equals"}
+{"tag": "z-blogphp-admin-login-probing", "pattern": "/zb_system/login.php", "type": "equals"}
+{"tag": "zenario-admin-login-probing", "pattern": "/zenario/admin/welcome.php", "type": "equals"}
+{"tag": "zentao-probing", "pattern": "/zentao/index.php", "type": "equals"}
+{"tag": "zimbra-probing", "pattern": "/zimbra", "type": "contains"}
+{"tag": "zipkin-login-probing", "pattern": "/zipkin/", "type": "equals"}
