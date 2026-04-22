@@ -30,5 +30,17 @@
     "url": "https://ip-ranges.amazonaws.com/ip-ranges.json",
     "output": "whitelists/cdn_providers/aws_cloudfront_ipv6.txt",
     "jq_filter": "[.ipv6_prefixes[] | select(.service == \"CLOUDFRONT\") | .ipv6_prefix] | sort | .[]"
+  },
+  {
+    "name": "gcore-ipv4",
+    "url": "https://api.gcore.com/cdn/public-ip-list",
+    "output": "whitelists/cdn_providers/gcore_ipv4.txt",
+    "jq_filter": "[.addresses[]] | sort | .[]"
+  },
+  {
+    "name": "gcore-ipv6",
+    "url": "https://api.gcore.com/cdn/public-ip-list",
+    "output": "whitelists/cdn_providers/gcore_ipv6.txt",
+    "jq_filter": "[.addresses_v6[]] | sort | .[]"
   }
 ]
