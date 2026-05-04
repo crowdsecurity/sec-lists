@@ -26,6 +26,7 @@ jobs:
                         "coreruleset/phpbb-rule-exclusions-plugin",
                         "coreruleset/cpanel-rule-exclusions-plugin",
                         "coreruleset/xenforo-rule-exclusions-plugin",
+                        "coreruleset/google-oauth2-plugin",
                     ]
             fail-fast: false # We want to try all plugins even if one fails, but still report failure if any fail
         steps:
