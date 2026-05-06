@@ -42,5 +42,17 @@
     "url": "https://api.gcore.com/cdn/public-ip-list",
     "output": "whitelists/cdn_providers/gcore_ipv6.txt",
     "jq_filter": "[.addresses_v6[]] | sort | .[]"
+  },
+  {
+    "name": "google-special-crawlers-ipv4",
+    "url": "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+    "output": "whitelists/benign_bots/search_engine_crawlers/google_special_crawlers_ipv4.txt",
+    "jq_filter": "[.prefixes[] | select(has(\"ipv4Prefix\")) | .ipv4Prefix] | sort | .[]"
+  },
+  {
+    "name": "google-special-crawlers-ipv6",
+    "url": "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+    "output": "whitelists/benign_bots/search_engine_crawlers/google_special_crawlers_ipv6.txt",
+    "jq_filter": "[.prefixes[] | select(has(\"ipv6Prefix\")) | .ipv6Prefix] | sort | .[]"
   }
 ]
