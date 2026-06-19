@@ -1,0 +1,5 @@
+# Googlebot - verified by forward-confirmed reverse DNS (*.googlebot.com, incl. *.geo.googlebot.com).
+# Per Google's spec only Googlebot resolves under googlebot.com; google.com / googleusercontent.com
+# belong to special-case crawlers (AdsBot) and user-triggered fetchers, which are out of scope here.
+# https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot
+{"name":"googlebot","user_agent":"googlebot","rdns":["(^|\\.)googlebot\\.com$"]}
