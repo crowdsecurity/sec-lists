@@ -1,3 +1,2 @@
-# Amazonbot - verified by forward-confirmed reverse DNS (*.crawl.amazonbot.amazon)
-# https://developer.amazon.com/amazonbot
+# Amazonbot - https://developer.amazon.com/amazonbot
 {"name":"amazonbot","user_agent":"amazonbot","rdns":["(^|\\.)crawl\\.amazonbot\\.amazon$"]}

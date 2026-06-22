@@ -1,3 +1,2 @@
-# Applebot - verified by forward-confirmed reverse DNS (*.applebot.apple.com)
-# https://support.apple.com/en-us/119829
+# Applebot - https://support.apple.com/en-us/119829
 {"name":"applebot","user_agent":"applebot","rdns":["(^|\\.)applebot\\.apple\\.com$"]}
