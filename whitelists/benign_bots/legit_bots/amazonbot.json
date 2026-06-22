@@ -1,0 +1,2 @@
+# Amazonbot - https://developer.amazon.com/amazonbot
+{"name":"amazonbot","user_agent":"amazonbot","rdns":["(^|\\.)crawl\\.amazonbot\\.amazon$"]}
