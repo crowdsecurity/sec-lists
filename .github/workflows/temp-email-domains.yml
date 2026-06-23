@@ -22,12 +22,10 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout
+      - name: Checkout master
         uses: actions/checkout@v4
         with:
-          # Operate on whichever ref triggered the run: master for the
-          # scheduled job, or the chosen branch for a manual dispatch.
-          ref: ${{ github.ref_name }}
+          ref: master
           fetch-depth: 0
 
       - name: Install dependencies
@@ -86,6 +84,5 @@ jobs:
           git push --set-upstream origin "$BRANCH_NAME"
 
           gh pr create \
-            --base "${{ github.ref_name }}" \
             --title "Weekly sync: update disposable email domains" \
             --body "Automated weekly merge of disposable email domain sources (deviceandbrowserinfo / Antoine Vastel + Castle + CrowdSec) into \`$OUTPUT_FILE\`."
