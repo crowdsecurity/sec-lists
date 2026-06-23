@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 env:
   REMOTE_JSON_URL: "https://deviceandbrowserinfo.com/api/emails/disposable"
@@ -17,12 +18,17 @@ env:
 jobs:
   sync-disposable-email-domains:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout master
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: master
+          # Operate on whichever ref triggered the run: master for the
+          # scheduled job, or the chosen branch for a manual dispatch.
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Install dependencies
         run: |
@@ -63,17 +69,23 @@ jobs:
             echo "NEEDS_UPDATE=true" >> $GITHUB_ENV
           fi
 
-      - name: Commit changes (skip if no changes)
+      - name: Create PR with changes
         if: env.NEEDS_UPDATE == 'true'
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "$OUTPUT_FILE"
-          git commit -m "Weekly sync: update from $REMOTE_JSON_URL" || exit 0
 
-      - name: Push to master
-        if: env.NEEDS_UPDATE == 'true'
-        run: |
-          set -euo pipefail
-          git push origin HEAD:master
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          BRANCH_NAME="sync-disposable-email-domains-$(date +%s)"
+          git checkout -b "$BRANCH_NAME"
+
+          git add "$OUTPUT_FILE"
+          git commit -m "Weekly sync: update disposable email domains"
+
+          git push --set-upstream origin "$BRANCH_NAME"
+
+          gh pr create \
+            --base "${{ github.ref_name }}" \
+            --title "Weekly sync: update disposable email domains" \
+            --body "Automated weekly merge of disposable email domain sources (deviceandbrowserinfo / Antoine Vastel + Castle + CrowdSec) into \`$OUTPUT_FILE\`."
