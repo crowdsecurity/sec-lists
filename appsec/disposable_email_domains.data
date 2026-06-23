@@ -1,5 +1,5 @@
-# Source: https://deviceandbrowserinfo.com/api/emails/disposable
-# Thanks to Antoine Vastel for making this data available
+# Sources: https://deviceandbrowserinfo.com/api/emails/disposable (Antoine Vastel) + https://raw.githubusercontent.com/castle/disposable-email-domains/master/disposable-email-domains.txt (Castle) + appsec/crowdsec_disposable_email_domains.data (CrowdSec)
+# Thanks to Antoine Vastel and Castle for making their data available
 %20100007632494659.mcatay.xyz
 %20angevin.64.arraz.schwenke.xyz
 *.mintemail.com

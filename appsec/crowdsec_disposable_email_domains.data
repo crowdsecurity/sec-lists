@@ -1,0 +1,5 @@
+# DO NOT CONSUME THIS FILE DIRECTLY — use disposable_email_domains.data instead.
+# This is a CrowdSec-sourced list of disposable email domains. It is merged into
+# disposable_email_domains.data (alongside Antoine Vastel's and Castle's data) by
+# the temp-email-domains.yml GitHub Action. Add one domain per line below.
+web-library.net

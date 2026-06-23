@@ -10,7 +10,9 @@ permissions:
 
 env:
   REMOTE_JSON_URL: "https://deviceandbrowserinfo.com/api/emails/disposable"
+  CASTLE_LIST_URL: "https://raw.githubusercontent.com/castle/disposable-email-domains/master/disposable-email-domains.txt"
   OUTPUT_FILE: "appsec/disposable_email_domains.data"
+  CROWDSEC_SOURCE_FILE: "appsec/crowdsec_disposable_email_domains.data"
 
 jobs:
   sync-disposable-email-domains:
@@ -27,21 +29,30 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y jq curl
 
-      - name: Download and validate JSON
+      - name: Download and validate sources
         run: |
           set -euo pipefail
           curl -fsSL "$REMOTE_JSON_URL" -o /tmp/domains.json
           # Fail if invalid JSON or not an array
           jq -e 'type == "array"' /tmp/domains.json > /dev/null
+          curl -fsSL "$CASTLE_LIST_URL" -o /tmp/castle.txt
+          # Fail if the Castle list came back empty
+          [[ -s /tmp/castle.txt ]]
 
-      - name: Convert JSON array to line-delimited file
+      - name: Merge remote + Castle + CrowdSec sources into output file
         run: |
           set -euo pipefail
           mkdir -p "$(dirname "$OUTPUT_FILE")"
-          # Add a credit to the file
-          echo "# Source: $REMOTE_JSON_URL" > /tmp/out.txt
-          echo "# Thanks to Antoine Vastel for making this data available" >> /tmp/out.txt
-          jq -r '.[] ' /tmp/domains.json | sort >> /tmp/out.txt
+          # Credit every source that feeds this merged list
+          echo "# Sources: $REMOTE_JSON_URL (Antoine Vastel) + $CASTLE_LIST_URL (Castle) + $CROWDSEC_SOURCE_FILE (CrowdSec)" > /tmp/out.txt
+          echo "# Thanks to Antoine Vastel and Castle for making their data available" >> /tmp/out.txt
+          # Combine all sources, dropping comments/blanks,
+          # then sort -u so the merged file is a single deduplicated list.
+          {
+            jq -r '.[]' /tmp/domains.json
+            grep -vE '^\s*(#|$)' /tmp/castle.txt
+            [[ -f "$CROWDSEC_SOURCE_FILE" ]] && grep -vE '^\s*(#|$)' "$CROWDSEC_SOURCE_FILE" || true
+          } | sort -u >> /tmp/out.txt
           [[ -f "$OUTPUT_FILE" ]] || : > "$OUTPUT_FILE"
           # Only replace if content actually changed
           if cmp -s /tmp/out.txt "$OUTPUT_FILE"; then
