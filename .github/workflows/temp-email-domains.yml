@@ -50,13 +50,15 @@ jobs:
           # Credit every source that feeds this merged list
           echo "# Sources: $REMOTE_JSON_URL (Antoine Vastel) + $CASTLE_LIST_URL (Castle) + $CROWDSEC_SOURCE_FILE (CrowdSec)" > /tmp/out.txt
           echo "# Thanks to Antoine Vastel and Castle for making their data available" >> /tmp/out.txt
-          # Combine all sources, dropping comments/blanks,
-          # then sort -u so the merged file is a single deduplicated list.
+          # Combine all sources, then keep only well-formed domain names. The upstream
+          # feed sometimes emits junk (single chars, "*" wildcards, "🔒 Premium" suffixes,
+          # emails, trailing dots); this validation drops it and also strips the
+          # comment/blank lines from the file-based sources. Then sort -u into one list.
           {
             jq -r '.[]' /tmp/domains.json
-            grep -vE '^\s*(#|$)' /tmp/castle.txt
-            [[ -f "$CROWDSEC_SOURCE_FILE" ]] && grep -vE '^\s*(#|$)' "$CROWDSEC_SOURCE_FILE" || true
-          } | sort -u >> /tmp/out.txt
+            cat /tmp/castle.txt
+            [[ -f "$CROWDSEC_SOURCE_FILE" ]] && cat "$CROWDSEC_SOURCE_FILE" || true
+          } | grep -E '^([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$' | sort -u >> /tmp/out.txt
           [[ -f "$OUTPUT_FILE" ]] || : > "$OUTPUT_FILE"
           # Only replace if content actually changed
           if cmp -s /tmp/out.txt "$OUTPUT_FILE"; then
