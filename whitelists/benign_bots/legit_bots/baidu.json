@@ -1,0 +1,2 @@
+# Baidu (Baiduspider) - forward-confirmed rDNS crawl.baidu.com/.jp
+{"name":"baidu","user_agent":"baiduspider","rdns":["(^|\\.)crawl\\.baidu\\.(com|jp)$"]}

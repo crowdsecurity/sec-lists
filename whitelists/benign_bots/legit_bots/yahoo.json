@@ -1,0 +1,2 @@
+# Yahoo! Slurp - forward-confirmed rDNS crawl.yahoo.net
+{"name":"yahoo","user_agent":"slurp","rdns":["(^|\\.)crawl\\.yahoo\\.net$"]}

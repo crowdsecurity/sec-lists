@@ -1,0 +1,2 @@
+# Qwant - forward-confirmed rDNS qwant.com
+{"name":"qwant","user_agent":"qwant","rdns":["(^|\\.)qwant\\.com$"]}

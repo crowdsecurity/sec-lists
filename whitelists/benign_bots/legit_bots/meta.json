@@ -1,0 +1,2 @@
+# Meta link-preview / crawler - forward-confirmed rDNS fbsv.net (AS32934); https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
+{"name":"meta","user_agent":"facebookexternalhit|meta-externalagent|facebookcatalog","rdns":["(^|\\.)fbsv\\.net$"]}
