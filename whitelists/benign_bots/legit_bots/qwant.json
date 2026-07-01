@@ -1,0 +1,2 @@
+# Qwant - forward-confirmed rDNS qwant.com (from rdns_seo_bots.txt)
+{"name":"qwant","user_agent":"qwant","rdns":["(^|\\.)qwant\\.com$"]}

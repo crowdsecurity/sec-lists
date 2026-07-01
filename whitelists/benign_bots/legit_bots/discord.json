@@ -1,0 +1,2 @@
+# Discordbot link-preview - forward-confirmed rDNS ptr.discord.com (see crowdsecurity/discord-crawler-whitelist)
+{"name":"discord","user_agent":"discordbot","rdns":["(^|\\.)ptr\\.discord\\.com$"]}

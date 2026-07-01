@@ -1,0 +1,2 @@
+# Babbar (Barkrowler) - forward-confirmed rDNS babbar.eu/.tech (from rdns_seo_bots.txt)
+{"name":"babbar","user_agent":"barkrowler","rdns":["(^|\\.)babbar\\.(eu|tech)$"]}

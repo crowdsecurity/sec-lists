@@ -1,0 +1,2 @@
+# Pinterest - https://help.pinterest.com/en/business/article/pinterest-crawler (from search_engine_crawlers/ip_seo_bots.txt)
+{"name":"pinterest","user_agent":"pinterest","ranges":["54.236.1.0/24"]}

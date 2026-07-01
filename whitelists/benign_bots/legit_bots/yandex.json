@@ -1,0 +1,2 @@
+# Yandex - forward-confirmed rDNS yandex.ru/.net/.com (from search_engine_crawlers/rdns_seo_bots.txt)
+{"name":"yandex","user_agent":"yandex","rdns":["(^|\\.)yandex\\.(ru|net|com)$"]}

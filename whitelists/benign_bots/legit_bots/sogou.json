@@ -1,0 +1,2 @@
+# Sogou - forward-confirmed rDNS crawl.sogou.com (from rdns_seo_bots.txt)
+{"name":"sogou","user_agent":"sogou","rdns":["(^|\\.)crawl\\.sogou\\.com$"]}

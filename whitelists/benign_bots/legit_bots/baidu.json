@@ -1,0 +1,2 @@
+# Baidu (Baiduspider) - forward-confirmed rDNS crawl.baidu.com/.jp (from rdns_seo_bots.txt; Baidu rDNS forward-confirm can be unreliable)
+{"name":"baidu","user_agent":"baiduspider","rdns":["(^|\\.)crawl\\.baidu\\.(com|jp)$"]}
