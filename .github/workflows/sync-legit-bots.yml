@@ -1,0 +1,72 @@
+name: Sync Legit Bots
+
+on:
+  schedule:
+    - cron: "30 2 * * *" # every day, offset from the other sync jobs
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-legit-bots
+  cancel-in-progress: false
+
+env:
+  BRANCH_PREFIX: sync-legit-bots-
+
+jobs:
+  sync-legit-bots:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Refresh legit_bots entries from upstream sources
+        id: sync
+        run: python3 .github/scripts/sync-legit-bots.py
+
+      - name: Open PR and close superseded ones
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="${BRANCH_PREFIX}${{ github.run_id }}"
+          git checkout -b "$BRANCH"
+
+          for f in ${{ steps.sync.outputs.files }}; do
+            git add "$f"
+          done
+          git commit -m "Sync legit bots:${{ steps.sync.outputs.names }}"
+          git push --set-upstream origin "$BRANCH"
+
+          # Collect the still-open PRs from previous runs *before* opening the new
+          # one, so the new PR can never appear in its own supersede list.
+          SUPERSEDED=$(gh pr list --state open --limit 100 \
+            --json number,headRefName \
+            --jq ".[] | select(.headRefName | startswith(\"${BRANCH_PREFIX}\")) | .number")
+
+          PR_URL=$(gh pr create \
+            --base master \
+            --head "$BRANCH" \
+            --title "Sync legit bots:${{ steps.sync.outputs.names }}" \
+            --body-file "${{ steps.sync.outputs.body_file }}")
+          echo "Opened $PR_URL"
+
+          # Only now that the replacement exists do we retire the older ones, so a
+          # failure above leaves the previous PR open rather than dropping updates.
+          for n in $SUPERSEDED; do
+            echo "Closing superseded PR #$n"
+            gh pr close "$n" \
+              --comment "Superseded by $PR_URL, which contains the current upstream state." \
+              --delete-branch
+          done
