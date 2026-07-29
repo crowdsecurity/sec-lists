@@ -1,0 +1,2 @@
+# SeznamBot - forward-confirmed rDNS seznam.cz (fulltextrobot-*.seznam.cz); https://search.seznam.cz/ipranges/seznambot.json also publishes IP ranges
+{"name":"seznam","user_agent":"seznambot","rdns":["(^|\\.)seznam\\.cz$"]}

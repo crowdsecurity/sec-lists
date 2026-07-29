@@ -1,0 +1,2 @@
+# SemrushBot and friends - forward-confirmed rDNS bot.semrush.com; Semrush publishes no IP list (https://www.semrush.com/bot/)
+{"name":"semrush","user_agent":"semrushbot|siteauditbot|splitsignalbot|rytebot","rdns":["(^|\\.)bot\\.semrush\\.com$"]}

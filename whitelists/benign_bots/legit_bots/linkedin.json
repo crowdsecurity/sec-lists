@@ -1,0 +1,2 @@
+# LinkedInBot link-preview - forward-confirmed rDNS fwd.linkedin.com
+{"name":"linkedin","user_agent":"linkedinbot","rdns":["(^|\\.)fwd\\.linkedin\\.com$"]}
