@@ -1,0 +1,2 @@
+# Naver Yeti - forward-confirmed rDNS web.naver.com (https://searchadvisor.naver.com/doc/naverbot.json also publishes IP ranges)
+{"name":"naver","user_agent":"yeti","rdns":["(^|\\.)web\\.naver\\.com$"]}

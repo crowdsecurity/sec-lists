@@ -1,0 +1,2 @@
+# Internet Archive (Wayback Machine) - forward-confirmed rDNS archive.org
+{"name":"internet-archive","user_agent":"ia_archiver|archive\\.org_bot","rdns":["(^|\\.)archive\\.org$"]}

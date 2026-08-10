@@ -1,0 +1,130 @@
+[
+  {
+    "name": "anthropic",
+    "user_agent": "claude-searchbot|claude-user",
+    "comment": "Anthropic Claude-SearchBot / Claude-User - https://claude.com/crawling/bots.json (auto-synced). ClaudeBot (training crawler) shares these IPs but is deliberately excluded from the user_agent match.",
+    "urls": ["https://claude.com/crawling/bots.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "duckduckbot",
+    "user_agent": "duckduckbot",
+    "comment": "DuckDuckBot - https://duckduckgo.com/duckduckbot.json (auto-synced)",
+    "urls": ["https://duckduckgo.com/duckduckbot.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "duckassistbot",
+    "user_agent": "duckassistbot",
+    "comment": "DuckAssistBot (DuckDuckGo AI assistant) - https://duckduckgo.com/duckassistbot.json (auto-synced). DuckDuckGo serves one combined list for DuckDuckBot and DuckAssistBot; kept separate so search crawling can be allowed without AI assistant fetches.",
+    "urls": ["https://duckduckgo.com/duckassistbot.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "gptbot",
+    "user_agent": "gptbot",
+    "comment": "GPTBot (OpenAI) - https://openai.com/gptbot.json (auto-synced)",
+    "urls": ["https://openai.com/gptbot.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "openai-searchbot",
+    "user_agent": "oai-searchbot",
+    "comment": "OpenAI SearchBot - https://openai.com/searchbot.json (auto-synced)",
+    "urls": ["https://openai.com/searchbot.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "openai-chatgpt-user",
+    "user_agent": "chatgpt-user",
+    "comment": "OpenAI ChatGPT-User - https://openai.com/chatgpt-user.json (auto-synced)",
+    "urls": ["https://openai.com/chatgpt-user.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "openai-adsbot",
+    "user_agent": "oai-adsbot",
+    "comment": "OpenAI OAI-AdsBot - https://openai.com/adsbot.json (auto-synced)",
+    "urls": ["https://openai.com/adsbot.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "perplexitybot",
+    "user_agent": "perplexitybot",
+    "comment": "PerplexityBot - https://www.perplexity.ai/perplexitybot.json (auto-synced)",
+    "urls": ["https://www.perplexity.ai/perplexitybot.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "perplexity-user",
+    "user_agent": "perplexity-user",
+    "comment": "Perplexity-User (user-triggered fetches) - https://www.perplexity.ai/perplexity-user.json (auto-synced)",
+    "urls": ["https://www.perplexity.ai/perplexity-user.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "mistralai-index",
+    "user_agent": "mistralai-index",
+    "comment": "MistralAI-Index - https://mistral.ai/mistralai-index-ips.json (auto-synced)",
+    "urls": ["https://mistral.ai/mistralai-index-ips.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "mistralai-user",
+    "user_agent": "mistralai-user",
+    "comment": "MistralAI-User (user-triggered fetches) - https://mistral.ai/mistralai-user-ips.json (auto-synced)",
+    "urls": ["https://mistral.ai/mistralai-user-ips.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "ahrefs",
+    "user_agent": "ahrefsbot|ahrefssiteaudit",
+    "comment": "AhrefsBot / AhrefsSiteAudit - https://api.ahrefs.com/v3/public/crawler-ip-ranges (auto-synced). rDNS ahrefs.net does not forward-confirm, so this is IP based.",
+    "urls": ["https://api.ahrefs.com/v3/public/crawler-ip-ranges"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]"
+  },
+  {
+    "name": "flipboard",
+    "user_agent": "flipboardproxy|flipboardbot|flipboardrss",
+    "comment": "Flipboard proxy / link preview - https://cdn.flipboard.com/flipboard_ip.txt (auto-synced). rDNS proxy.flipboard.com does not forward-confirm, so this is IP based.",
+    "urls": ["https://cdn.flipboard.com/flipboard_ip.txt"]
+  },
+  {
+    "name": "telegram",
+    "user_agent": "telegrambot",
+    "comment": "Telegram - https://core.telegram.org/resources/cidr.txt (auto-synced)",
+    "urls": ["https://core.telegram.org/resources/cidr.txt"]
+  },
+  {
+    "name": "uptimerobot",
+    "user_agent": "uptimerobot",
+    "comment": "UptimeRobot monitors - https://cdn.uptimerobot.com/api/IPv4andIPv6.txt (auto-synced)",
+    "urls": ["https://cdn.uptimerobot.com/api/IPv4andIPv6.txt"]
+  },
+  {
+    "name": "datadog",
+    "user_agent": "datadog",
+    "comment": "Datadog Synthetics monitors - https://ip-ranges.datadoghq.com/ (.synthetics; auto-synced)",
+    "urls": ["https://ip-ranges.datadoghq.com/"],
+    "jq_filter": "[.synthetics.prefixes_ipv4[], .synthetics.prefixes_ipv6[]] | .[]"
+  },
+  {
+    "name": "pagerduty",
+    "user_agent": "pagerduty-webhook",
+    "comment": "PagerDuty outbound webhooks (UA PagerDuty-Webhook/Vx.0) - US + EU service regions, https://developer.pagerduty.com/docs/webhook-ips (auto-synced)",
+    "urls": [
+      "https://developer.pagerduty.com/ip-safelists/webhooks-us-service-region-json",
+      "https://developer.pagerduty.com/ip-safelists/webhooks-eu-service-region-json"
+    ],
+    "jq_filter": ".[]"
+  },
+  {
+    "name": "lumar",
+    "user_agent": "lumar|deepcrawl",
+    "comment": "Lumar (ex-Deepcrawl) - see https://www.lumar.io/ for the current IP list",
+    "urls": ["https://www.lumar.io/wp-content/uploads/2026/02/lumar_ip_list_feb_2026.json"],
+    "jq_filter": "[.prefixes[] | .ipv4Prefix // .ipv6Prefix] | .[]",
+    "disabled": true,
+    "note": "Lumar publishes its IP list under a date-stamped wp-content URL that rotates (…/2026/02/lumar_ip_list_feb_2026.json), so it cannot be polled on a fixed URL. Refresh whitelists/benign_bots/legit_bots/lumar.json by hand and bump the URL here when Lumar publishes a new one."
+  }
+]

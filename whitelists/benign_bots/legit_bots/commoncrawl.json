@@ -1,0 +1,2 @@
+# CCBot (Common Crawl) - forward-confirmed rDNS crawl.commoncrawl.org (https://index.commoncrawl.org/ccbot.json also publishes IP ranges)
+{"name":"commoncrawl","user_agent":"ccbot","rdns":["(^|\\.)crawl\\.commoncrawl\\.org$"]}

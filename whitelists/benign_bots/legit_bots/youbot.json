@@ -1,0 +1,2 @@
+# YouBot (You.com) - forward-confirmed rDNS search.you.com
+{"name":"youbot","user_agent":"youbot","rdns":["(^|\\.)search\\.you\\.com$"]}
