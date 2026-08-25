@@ -54,5 +54,29 @@
     "url": "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
     "output": "whitelists/benign_bots/search_engine_crawlers/google_special_crawlers_ipv6.txt",
     "jq_filter": "[.prefixes[] | select(has(\"ipv6Prefix\")) | .ipv6Prefix] | sort | .[]"
+  },
+  {
+    "name": "openai-searchbot-ipv4",
+    "url": "https://openai.com/searchbot.json",
+    "output": "whitelists/ai_bots/openai_searchbot_ipv4.txt",
+    "jq_filter": "[.prefixes[] | select(has(\"ipv4Prefix\")) | .ipv4Prefix] | sort | .[]"
+  },
+  {
+    "name": "openai-searchbot-ipv6",
+    "url": "https://openai.com/searchbot.json",
+    "output": "whitelists/ai_bots/openai_searchbot_ipv6.txt",
+    "jq_filter": "[.prefixes[] | select(has(\"ipv6Prefix\")) | .ipv6Prefix] | sort | .[]"
+  },
+  {
+    "name": "openai-chatgpt-user-ipv4",
+    "url": "https://openai.com/chatgpt-user.json",
+    "output": "whitelists/ai_bots/openai_chatgpt_user_ipv4.txt",
+    "jq_filter": "[.prefixes[] | select(has(\"ipv4Prefix\")) | .ipv4Prefix] | sort | .[]"
+  },
+  {
+    "name": "openai-chatgpt-user-ipv6",
+    "url": "https://openai.com/chatgpt-user.json",
+    "output": "whitelists/ai_bots/openai_chatgpt_user_ipv6.txt",
+    "jq_filter": "[.prefixes[] | select(has(\"ipv6Prefix\")) | .ipv6Prefix] | sort | .[]"
   }
 ]
