@@ -31,3 +31,4 @@
 {"cve":"CVE-2025-40552","uri":"/helpdesk/WebObjects/Helpdesk.woa/wo/"}
 {"cve":"CVE-2026-20127","uri":"/reports/data/opt/data/containers/config/data-collection-agent/.dca"}
 {"cve":"CVE-2026-63030","uri":"/wp-json/batch/v1"}
+{"cve":"CVE-2023-54391","uri":"/api2/json/access/ticket"}
