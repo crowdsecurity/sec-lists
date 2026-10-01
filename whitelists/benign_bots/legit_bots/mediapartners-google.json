@@ -1,0 +1,2 @@
+# Mediapartners-Google (AdSense / Ad Manager) - https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers
+{"name":"mediapartners-google","user_agent":"mediapartners-google","rdns":["^rate-limited-proxy-[0-9-]+\\.google\\.com$"]}

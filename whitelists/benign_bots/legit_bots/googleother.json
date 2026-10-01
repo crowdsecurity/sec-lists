@@ -1,0 +1,2 @@
+# GoogleOther / -Image / -Video - https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers
+{"name":"googleother","user_agent":"googleother","rdns":["(^|\\.)googlebot\\.com$"]}
