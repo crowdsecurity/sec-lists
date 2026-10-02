@@ -86,6 +86,7 @@
 \bBullseye\b
 \bBunnySlippers\b
 \bBuzzSumo\b
+\bBytespider\b
 \bCalculon\b
 \bCATExplorador\b
 \bCazoodleBot\b
