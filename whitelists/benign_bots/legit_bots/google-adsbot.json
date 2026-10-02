@@ -1,0 +1,2 @@
+# AdsBot (Google Ads landing-page quality: AdsBot-Google, AdsBot-Google-Mobile) - https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers
+{"name":"google-adsbot","user_agent":"adsbot-google","rdns":["^rate-limited-proxy-[0-9-]+\\.google\\.com$"]}
