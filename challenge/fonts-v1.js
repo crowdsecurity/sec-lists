@@ -16,10 +16,23 @@
 const PROBE = "mmmmmmmmmmlliWWMMOO0123";
 const SIZE = 60;
 
-// Emoji need their own baseline: an emoji glyph in a text font is a tofu box,
-// which has nothing to do with the Latin advance above.
+// The plain emoji advance identifies which emoji font the system uses without
+// naming any family: Apple Color Emoji measures 96 here, Noto Color Emoji
+// ~119.5-120. Useful on platforms that resolve no family names at all.
 const EMOJI = "\u{1F600}\u{1F1EB}\u{1F1F7}";
 const EMOJI_SIZE = 48;
+
+// Naming an emoji font cannot be tested with emoji: a text font has no emoji
+// glyph, so the baseline already borrows the system emoji font and both sides
+// of the comparison measure the same thing. The keycap bases are the way in --
+// monospace HAS "0123#*", and a colour emoji font draws them far wider, so
+// naming one moves the advance and naming an absent one does not.
+const KEYCAP = "0123#*";
+
+// Must resolve to nothing. Its advance is the control: when it differs from
+// the baseline, family resolution is not behaving and no name-based
+// measurement below can be trusted.
+const ABSENT = "NoSuchFontXYZ123";
 
 function round2(n) {
   return Math.round(n * 100) / 100;
@@ -45,10 +58,13 @@ export function collectSignals(fp) {
   fp.custom.cfFontDejavu = -1;
   fp.custom.cfFontSys = "";
   fp.custom.cfFontFrac = -1;
+  fp.custom.cfFontResolved = -1;
   fp.custom.cfFontEmojiBase = -1;
-  fp.custom.cfFontEmojiApple = -1;
-  fp.custom.cfFontEmojiSegoe = -1;
-  fp.custom.cfFontEmojiNoto = -1;
+  fp.custom.cfFontKcBase = -1;
+  fp.custom.cfFontKcCtrl = -1;
+  fp.custom.cfFontKcApple = -1;
+  fp.custom.cfFontKcSegoe = -1;
+  fp.custom.cfFontKcNoto = -1;
 
   try {
     const ctx = document.createElement("canvas").getContext("2d");
@@ -68,6 +84,19 @@ export function collectSignals(fp) {
     for (const k of Object.keys(ui)) {
       fp.custom[k] = ui[k];
     }
+
+    // How many of the four moved off the baseline. Zero means this client
+    // resolves nothing by name -- every Android browser measured so far -- and
+    // a rule that reads "naming X did not move the advance" as "X is missing"
+    // must stay silent there. A desktop host always resolves at least one, so
+    // one spoofing another platform is still caught.
+    let resolved = 0;
+    for (const v of Object.values(ui)) {
+      if (v !== base) {
+        resolved++;
+      }
+    }
+    fp.custom.cfFontResolved = resolved;
 
     // How many advances landed on a whole pixel. Mainstream desktop stacks
     // position sub-pixel; a full set of integers means hinting was pinned.
@@ -100,11 +129,16 @@ export function collectSignals(fp) {
 
   try {
     const ctx = document.createElement("canvas").getContext("2d");
+
     ctx.font = EMOJI_SIZE + "px monospace";
     fp.custom.cfFontEmojiBase = round2(ctx.measureText(EMOJI).width);
-    fp.custom.cfFontEmojiApple = advance(ctx, "Apple Color Emoji", EMOJI, EMOJI_SIZE);
-    fp.custom.cfFontEmojiSegoe = advance(ctx, "Segoe UI Emoji", EMOJI, EMOJI_SIZE);
-    fp.custom.cfFontEmojiNoto = advance(ctx, "Noto Color Emoji", EMOJI, EMOJI_SIZE);
+
+    ctx.font = EMOJI_SIZE + "px monospace";
+    fp.custom.cfFontKcBase = round2(ctx.measureText(KEYCAP).width);
+    fp.custom.cfFontKcCtrl = advance(ctx, ABSENT, KEYCAP, EMOJI_SIZE);
+    fp.custom.cfFontKcApple = advance(ctx, "Apple Color Emoji", KEYCAP, EMOJI_SIZE);
+    fp.custom.cfFontKcSegoe = advance(ctx, "Segoe UI Emoji", KEYCAP, EMOJI_SIZE);
+    fp.custom.cfFontKcNoto = advance(ctx, "Noto Color Emoji", KEYCAP, EMOJI_SIZE);
   } catch {
     // leave the sentinels
   }
