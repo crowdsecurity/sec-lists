@@ -86,6 +86,8 @@
 \bBullseye\b
 \bBunnySlippers\b
 \bBuzzSumo\b
+\bbytedance\b
+\bBytespider\b
 \bCalculon\b
 \bCATExplorador\b
 \bCazoodleBot\b
@@ -101,6 +103,7 @@
 \bClaritybot\b
 \bCliqzbot\b
 \bCloud\ mapping\b
+\bclaudebot\b
 \bCocolyzebot\b
 \bCODE87\b
 \bCogentbot\b
@@ -171,6 +174,7 @@
 \bExtreme\ Picture\ Finder\b
 \bEyeNetIE\b
 \bEzooms\b
+\bfacebookexternalhit\b
 \bfacebookscraper\b
 \bFDM\b
 \bFemtosearchBot\b
