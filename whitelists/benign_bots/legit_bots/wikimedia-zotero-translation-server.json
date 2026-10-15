@@ -1,0 +1,2 @@
+# Wikimedia Foundation citation service (Zotero translation server) - forward-confirmed rDNS wikimedia.org
+{"name":"wikimedia-zotero-translation-server","user_agent":"ZoteroTranslationServer/WMF","rdns":["(^|\\.)wikimedia\\.org$"]}

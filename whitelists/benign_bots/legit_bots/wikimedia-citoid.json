@@ -1,0 +1,2 @@
+# Wikimedia Foundation citation service (Citoid) - forward-confirmed rDNS wikimedia.org
+{"name":"wikimedia-citoid","user_agent":"Citoid/WMF","rdns":["(^|\\.)wikimedia\\.org$"]}
