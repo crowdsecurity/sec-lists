@@ -25,14 +25,21 @@ export function collectSignals(fp) {
   fp.custom.cfH264Sup = false;
   fp.custom.cfH264Eff = false;
   fp.custom.cfRtcH264 = false;
+  // Whether there was a WebRTC sender to ask at all. Without this, a client
+  // with WebRTC switched off reports cfRtcH264 = false through the sentinel,
+  // indistinguishable from a stack that answered and offered no H264 -- and
+  // Firefox's media.peerconnection.enabled is a widely recommended privacy
+  // setting and a documented enterprise policy, so that is a real population.
+  fp.custom.cfRtcAvail = false;
 
   try {
     const rtc = rtcOffersH264();
     if (rtc !== null) {
+      fp.custom.cfRtcAvail = true;
       fp.custom.cfRtcH264 = rtc;
     }
   } catch {
-    // sentinel stands
+    // sentinels stand
   }
 
   if (!navigator.mediaCapabilities || !navigator.mediaCapabilities.decodingInfo) {
