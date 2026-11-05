@@ -1,2 +1,2 @@
-# Google Search Console site-verification fetcher - forward-confirmed rDNS google.com
-{"name":"google-site-verification","user_agent":"Google-Site-Verification","rdns":["(^|\\.)google\\.com$","(^|\\.)googleusercontent\\.com$"]}
+# Google Search Console site-verification fetcher - forward-confirmed rDNS google-proxy-*.google.com
+{"name":"google-site-verification","user_agent":"Google-Site-Verification","rdns":["(^|\\.)google-proxy-[0-9-]+\\.google\\.com$"]}
