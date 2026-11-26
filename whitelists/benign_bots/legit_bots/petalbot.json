@@ -1,0 +1,2 @@
+# PetalBot (Huawei Petal Search) - forward-confirmed rDNS petalsearch.com (petalbot-*.petalsearch.com); https://webmaster.petalsearch.com/site/petalbot
+{"name":"petalbot","user_agent":"petalbot","rdns":["(^|\\.)petalsearch\\.com$"]}
