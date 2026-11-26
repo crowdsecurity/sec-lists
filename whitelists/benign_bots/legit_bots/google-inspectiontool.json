@@ -1,0 +1,2 @@
+# Google Search Console URL Inspection / Rich Results Test fetcher - forward-confirmed rDNS googlebot.com
+{"name":"google-inspectiontool","user_agent":"Google-InspectionTool","rdns":["(^|\\.)googlebot\\.com$"]}
